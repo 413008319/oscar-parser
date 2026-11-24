@@ -2296,7 +2296,7 @@ secret
 // https://docs.oracle.com/cd/E11882_01/server.112/e41084/statements_4005.htm#SQLRF01105
 analyze
     : (
-        (ANALYZE | ANALYE) ((VERBOSE | TABLE)? tableview_name | INDEX index_name) partition_extention_clause?
+        (ANALYZE | ANALYSE) ((VERBOSE | TABLE)? tableview_name | INDEX index_name) partition_extention_clause?
         | (ANALYZE | ANALYSE) CLUSTER cluster_name
     ) (validation_clauses | LIST CHAINED ROWS into_clause1? | DELETE SYSTEM? STATISTICS | FAST)?
     ;
@@ -10263,7 +10263,7 @@ comment_on_oscar
     | PROCEDURE procedure_name
     | INDEX index_name
     | OPERATOR operator_name '(' (NONE ',' argument | argument ',' (NONE | argument) )? ')'
-    | PATAMETER parameter_name ON procedure_name
+    | PARAMETER parameter_name ON procedure_name
     | SCHEMA schema_name
     | SEQUENCE sequence_name
     | TYPE type_name
@@ -10767,7 +10767,7 @@ limitOptions:
 
 limitOption:
     identifier
-    | (QUESTION_MARK | UNSIGNED_INTEGER | ALL)
+    | (QUESTION | UNSIGNED_INTEGER | ALL)
 ;
 
 top_clause

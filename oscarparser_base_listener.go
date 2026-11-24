@@ -746,6 +746,12 @@ func (s *BaseOscarParserListener) EnterDml_event_clause(ctx *Dml_event_clauseCon
 // ExitDml_event_clause is called when production dml_event_clause is exited.
 func (s *BaseOscarParserListener) ExitDml_event_clause(ctx *Dml_event_clauseContext) {}
 
+// EnterDefer_option is called when production defer_option is entered.
+func (s *BaseOscarParserListener) EnterDefer_option(ctx *Defer_optionContext) {}
+
+// ExitDefer_option is called when production defer_option is exited.
+func (s *BaseOscarParserListener) ExitDefer_option(ctx *Defer_optionContext) {}
+
 // EnterDml_event_element is called when production dml_event_element is entered.
 func (s *BaseOscarParserListener) EnterDml_event_element(ctx *Dml_event_elementContext) {}
 
@@ -1067,6 +1073,12 @@ func (s *BaseOscarParserListener) EnterSequence_start_clause(ctx *Sequence_start
 
 // ExitSequence_start_clause is called when production sequence_start_clause is exited.
 func (s *BaseOscarParserListener) ExitSequence_start_clause(ctx *Sequence_start_clauseContext) {}
+
+// EnterSequence_restart_clause is called when production sequence_restart_clause is entered.
+func (s *BaseOscarParserListener) EnterSequence_restart_clause(ctx *Sequence_restart_clauseContext) {}
+
+// ExitSequence_restart_clause is called when production sequence_restart_clause is exited.
+func (s *BaseOscarParserListener) ExitSequence_restart_clause(ctx *Sequence_restart_clauseContext) {}
 
 // EnterCreate_analytic_view is called when production create_analytic_view is entered.
 func (s *BaseOscarParserListener) EnterCreate_analytic_view(ctx *Create_analytic_viewContext) {}
@@ -2708,6 +2720,18 @@ func (s *BaseOscarParserListener) EnterInline_constraint(ctx *Inline_constraintC
 // ExitInline_constraint is called when production inline_constraint is exited.
 func (s *BaseOscarParserListener) ExitInline_constraint(ctx *Inline_constraintContext) {}
 
+// EnterFull_encryption is called when production full_encryption is entered.
+func (s *BaseOscarParserListener) EnterFull_encryption(ctx *Full_encryptionContext) {}
+
+// ExitFull_encryption is called when production full_encryption is exited.
+func (s *BaseOscarParserListener) ExitFull_encryption(ctx *Full_encryptionContext) {}
+
+// EnterEncryption_type is called when production encryption_type is entered.
+func (s *BaseOscarParserListener) EnterEncryption_type(ctx *Encryption_typeContext) {}
+
+// ExitEncryption_type is called when production encryption_type is exited.
+func (s *BaseOscarParserListener) ExitEncryption_type(ctx *Encryption_typeContext) {}
+
 // EnterInline_ref_constraint is called when production inline_ref_constraint is entered.
 func (s *BaseOscarParserListener) EnterInline_ref_constraint(ctx *Inline_ref_constraintContext) {}
 
@@ -2825,6 +2849,12 @@ func (s *BaseOscarParserListener) EnterPermanent_tablespace_clause(ctx *Permanen
 // ExitPermanent_tablespace_clause is called when production permanent_tablespace_clause is exited.
 func (s *BaseOscarParserListener) ExitPermanent_tablespace_clause(ctx *Permanent_tablespace_clauseContext) {
 }
+
+// EnterDefault_storage_option is called when production default_storage_option is entered.
+func (s *BaseOscarParserListener) EnterDefault_storage_option(ctx *Default_storage_optionContext) {}
+
+// ExitDefault_storage_option is called when production default_storage_option is exited.
+func (s *BaseOscarParserListener) ExitDefault_storage_option(ctx *Default_storage_optionContext) {}
 
 // EnterTablespace_encryption_spec is called when production tablespace_encryption_spec is entered.
 func (s *BaseOscarParserListener) EnterTablespace_encryption_spec(ctx *Tablespace_encryption_specContext) {
@@ -3256,6 +3286,14 @@ func (s *BaseOscarParserListener) EnterDrop_materialized_view(ctx *Drop_material
 // ExitDrop_materialized_view is called when production drop_materialized_view is exited.
 func (s *BaseOscarParserListener) ExitDrop_materialized_view(ctx *Drop_materialized_viewContext) {}
 
+// EnterDrop_materialized_view_log is called when production drop_materialized_view_log is entered.
+func (s *BaseOscarParserListener) EnterDrop_materialized_view_log(ctx *Drop_materialized_view_logContext) {
+}
+
+// ExitDrop_materialized_view_log is called when production drop_materialized_view_log is exited.
+func (s *BaseOscarParserListener) ExitDrop_materialized_view_log(ctx *Drop_materialized_view_logContext) {
+}
+
 // EnterCreate_context is called when production create_context is entered.
 func (s *BaseOscarParserListener) EnterCreate_context(ctx *Create_contextContext) {}
 
@@ -3475,6 +3513,30 @@ func (s *BaseOscarParserListener) EnterTable_properties(ctx *Table_propertiesCon
 
 // ExitTable_properties is called when production table_properties is exited.
 func (s *BaseOscarParserListener) ExitTable_properties(ctx *Table_propertiesContext) {}
+
+// EnterLock_option is called when production lock_option is entered.
+func (s *BaseOscarParserListener) EnterLock_option(ctx *Lock_optionContext) {}
+
+// ExitLock_option is called when production lock_option is exited.
+func (s *BaseOscarParserListener) ExitLock_option(ctx *Lock_optionContext) {}
+
+// EnterOpt_start is called when production opt_start is entered.
+func (s *BaseOscarParserListener) EnterOpt_start(ctx *Opt_startContext) {}
+
+// ExitOpt_start is called when production opt_start is exited.
+func (s *BaseOscarParserListener) ExitOpt_start(ctx *Opt_startContext) {}
+
+// EnterOn_commit_clause is called when production on_commit_clause is entered.
+func (s *BaseOscarParserListener) EnterOn_commit_clause(ctx *On_commit_clauseContext) {}
+
+// ExitOn_commit_clause is called when production on_commit_clause is exited.
+func (s *BaseOscarParserListener) ExitOn_commit_clause(ctx *On_commit_clauseContext) {}
+
+// EnterAuto_increment_set is called when production auto_increment_set is entered.
+func (s *BaseOscarParserListener) EnterAuto_increment_set(ctx *Auto_increment_setContext) {}
+
+// ExitAuto_increment_set is called when production auto_increment_set is exited.
+func (s *BaseOscarParserListener) ExitAuto_increment_set(ctx *Auto_increment_setContext) {}
 
 // EnterRead_only_clause is called when production read_only_clause is entered.
 func (s *BaseOscarParserListener) EnterRead_only_clause(ctx *Read_only_clauseContext) {}
@@ -4802,17 +4864,53 @@ func (s *BaseOscarParserListener) EnterMerge_table_partition(ctx *Merge_table_pa
 // ExitMerge_table_partition is called when production merge_table_partition is exited.
 func (s *BaseOscarParserListener) ExitMerge_table_partition(ctx *Merge_table_partitionContext) {}
 
+// EnterMerge_table_subpartition is called when production merge_table_subpartition is entered.
+func (s *BaseOscarParserListener) EnterMerge_table_subpartition(ctx *Merge_table_subpartitionContext) {
+}
+
+// ExitMerge_table_subpartition is called when production merge_table_subpartition is exited.
+func (s *BaseOscarParserListener) ExitMerge_table_subpartition(ctx *Merge_table_subpartitionContext) {
+}
+
 // EnterModify_table_partition is called when production modify_table_partition is entered.
 func (s *BaseOscarParserListener) EnterModify_table_partition(ctx *Modify_table_partitionContext) {}
 
 // ExitModify_table_partition is called when production modify_table_partition is exited.
 func (s *BaseOscarParserListener) ExitModify_table_partition(ctx *Modify_table_partitionContext) {}
 
+// EnterMove_table_partition is called when production move_table_partition is entered.
+func (s *BaseOscarParserListener) EnterMove_table_partition(ctx *Move_table_partitionContext) {}
+
+// ExitMove_table_partition is called when production move_table_partition is exited.
+func (s *BaseOscarParserListener) ExitMove_table_partition(ctx *Move_table_partitionContext) {}
+
+// EnterModify_table_subpartition is called when production modify_table_subpartition is entered.
+func (s *BaseOscarParserListener) EnterModify_table_subpartition(ctx *Modify_table_subpartitionContext) {
+}
+
+// ExitModify_table_subpartition is called when production modify_table_subpartition is exited.
+func (s *BaseOscarParserListener) ExitModify_table_subpartition(ctx *Modify_table_subpartitionContext) {
+}
+
+// EnterMove_table_subpartition is called when production move_table_subpartition is entered.
+func (s *BaseOscarParserListener) EnterMove_table_subpartition(ctx *Move_table_subpartitionContext) {}
+
+// ExitMove_table_subpartition is called when production move_table_subpartition is exited.
+func (s *BaseOscarParserListener) ExitMove_table_subpartition(ctx *Move_table_subpartitionContext) {}
+
 // EnterSplit_table_partition is called when production split_table_partition is entered.
 func (s *BaseOscarParserListener) EnterSplit_table_partition(ctx *Split_table_partitionContext) {}
 
 // ExitSplit_table_partition is called when production split_table_partition is exited.
 func (s *BaseOscarParserListener) ExitSplit_table_partition(ctx *Split_table_partitionContext) {}
+
+// EnterSplit_table_subpartition is called when production split_table_subpartition is entered.
+func (s *BaseOscarParserListener) EnterSplit_table_subpartition(ctx *Split_table_subpartitionContext) {
+}
+
+// ExitSplit_table_subpartition is called when production split_table_subpartition is exited.
+func (s *BaseOscarParserListener) ExitSplit_table_subpartition(ctx *Split_table_subpartitionContext) {
+}
 
 // EnterTruncate_table_partition is called when production truncate_table_partition is entered.
 func (s *BaseOscarParserListener) EnterTruncate_table_partition(ctx *Truncate_table_partitionContext) {
@@ -4821,6 +4919,12 @@ func (s *BaseOscarParserListener) EnterTruncate_table_partition(ctx *Truncate_ta
 // ExitTruncate_table_partition is called when production truncate_table_partition is exited.
 func (s *BaseOscarParserListener) ExitTruncate_table_partition(ctx *Truncate_table_partitionContext) {
 }
+
+// EnterRename_table_partition is called when production rename_table_partition is entered.
+func (s *BaseOscarParserListener) EnterRename_table_partition(ctx *Rename_table_partitionContext) {}
+
+// ExitRename_table_partition is called when production rename_table_partition is exited.
+func (s *BaseOscarParserListener) ExitRename_table_partition(ctx *Rename_table_partitionContext) {}
 
 // EnterExchange_table_partition is called when production exchange_table_partition is entered.
 func (s *BaseOscarParserListener) EnterExchange_table_partition(ctx *Exchange_table_partitionContext) {
@@ -4836,6 +4940,14 @@ func (s *BaseOscarParserListener) EnterCoalesce_table_partition(ctx *Coalesce_ta
 
 // ExitCoalesce_table_partition is called when production coalesce_table_partition is exited.
 func (s *BaseOscarParserListener) ExitCoalesce_table_partition(ctx *Coalesce_table_partitionContext) {
+}
+
+// EnterCoalesce_table_subpartition is called when production coalesce_table_subpartition is entered.
+func (s *BaseOscarParserListener) EnterCoalesce_table_subpartition(ctx *Coalesce_table_subpartitionContext) {
+}
+
+// ExitCoalesce_table_subpartition is called when production coalesce_table_subpartition is exited.
+func (s *BaseOscarParserListener) ExitCoalesce_table_subpartition(ctx *Coalesce_table_subpartitionContext) {
 }
 
 // EnterAlter_interval_partition is called when production alter_interval_partition is entered.
@@ -5007,6 +5119,30 @@ func (s *BaseOscarParserListener) EnterColumn_clauses(ctx *Column_clausesContext
 
 // ExitColumn_clauses is called when production column_clauses is exited.
 func (s *BaseOscarParserListener) ExitColumn_clauses(ctx *Column_clausesContext) {}
+
+// EnterAlter_column_default is called when production alter_column_default is entered.
+func (s *BaseOscarParserListener) EnterAlter_column_default(ctx *Alter_column_defaultContext) {}
+
+// ExitAlter_column_default is called when production alter_column_default is exited.
+func (s *BaseOscarParserListener) ExitAlter_column_default(ctx *Alter_column_defaultContext) {}
+
+// EnterAlter_column_nullable is called when production alter_column_nullable is entered.
+func (s *BaseOscarParserListener) EnterAlter_column_nullable(ctx *Alter_column_nullableContext) {}
+
+// ExitAlter_column_nullable is called when production alter_column_nullable is exited.
+func (s *BaseOscarParserListener) ExitAlter_column_nullable(ctx *Alter_column_nullableContext) {}
+
+// EnterAlter_column_type is called when production alter_column_type is entered.
+func (s *BaseOscarParserListener) EnterAlter_column_type(ctx *Alter_column_typeContext) {}
+
+// ExitAlter_column_type is called when production alter_column_type is exited.
+func (s *BaseOscarParserListener) ExitAlter_column_type(ctx *Alter_column_typeContext) {}
+
+// EnterAlter_table_rebuild is called when production alter_table_rebuild is entered.
+func (s *BaseOscarParserListener) EnterAlter_table_rebuild(ctx *Alter_table_rebuildContext) {}
+
+// ExitAlter_table_rebuild is called when production alter_table_rebuild is exited.
+func (s *BaseOscarParserListener) ExitAlter_table_rebuild(ctx *Alter_table_rebuildContext) {}
 
 // EnterModify_collection_retrieval is called when production modify_collection_retrieval is entered.
 func (s *BaseOscarParserListener) EnterModify_collection_retrieval(ctx *Modify_collection_retrievalContext) {
@@ -5402,11 +5538,23 @@ func (s *BaseOscarParserListener) EnterReferences_clause(ctx *References_clauseC
 // ExitReferences_clause is called when production references_clause is exited.
 func (s *BaseOscarParserListener) ExitReferences_clause(ctx *References_clauseContext) {}
 
+// EnterKey_actions is called when production key_actions is entered.
+func (s *BaseOscarParserListener) EnterKey_actions(ctx *Key_actionsContext) {}
+
+// ExitKey_actions is called when production key_actions is exited.
+func (s *BaseOscarParserListener) ExitKey_actions(ctx *Key_actionsContext) {}
+
 // EnterOn_delete_clause is called when production on_delete_clause is entered.
 func (s *BaseOscarParserListener) EnterOn_delete_clause(ctx *On_delete_clauseContext) {}
 
 // ExitOn_delete_clause is called when production on_delete_clause is exited.
 func (s *BaseOscarParserListener) ExitOn_delete_clause(ctx *On_delete_clauseContext) {}
+
+// EnterOn_update_clause is called when production on_update_clause is entered.
+func (s *BaseOscarParserListener) EnterOn_update_clause(ctx *On_update_clauseContext) {}
+
+// ExitOn_update_clause is called when production on_update_clause is exited.
+func (s *BaseOscarParserListener) ExitOn_update_clause(ctx *On_update_clauseContext) {}
 
 // EnterUnique_key_clause is called when production unique_key_clause is entered.
 func (s *BaseOscarParserListener) EnterUnique_key_clause(ctx *Unique_key_clauseContext) {}
@@ -5818,6 +5966,12 @@ func (s *BaseOscarParserListener) EnterFetch_statement(ctx *Fetch_statementConte
 // ExitFetch_statement is called when production fetch_statement is exited.
 func (s *BaseOscarParserListener) ExitFetch_statement(ctx *Fetch_statementContext) {}
 
+// EnterMove_statement is called when production move_statement is entered.
+func (s *BaseOscarParserListener) EnterMove_statement(ctx *Move_statementContext) {}
+
+// ExitMove_statement is called when production move_statement is exited.
+func (s *BaseOscarParserListener) ExitMove_statement(ctx *Move_statementContext) {}
+
 // EnterVariable_or_collection is called when production variable_or_collection is entered.
 func (s *BaseOscarParserListener) EnterVariable_or_collection(ctx *Variable_or_collectionContext) {}
 
@@ -5843,6 +5997,20 @@ func (s *BaseOscarParserListener) EnterSet_transaction_command(ctx *Set_transact
 
 // ExitSet_transaction_command is called when production set_transaction_command is exited.
 func (s *BaseOscarParserListener) ExitSet_transaction_command(ctx *Set_transaction_commandContext) {}
+
+// EnterStart_transaction_command is called when production start_transaction_command is entered.
+func (s *BaseOscarParserListener) EnterStart_transaction_command(ctx *Start_transaction_commandContext) {
+}
+
+// ExitStart_transaction_command is called when production start_transaction_command is exited.
+func (s *BaseOscarParserListener) ExitStart_transaction_command(ctx *Start_transaction_commandContext) {
+}
+
+// EnterEnd_transaction_command is called when production end_transaction_command is entered.
+func (s *BaseOscarParserListener) EnterEnd_transaction_command(ctx *End_transaction_commandContext) {}
+
+// ExitEnd_transaction_command is called when production end_transaction_command is exited.
+func (s *BaseOscarParserListener) ExitEnd_transaction_command(ctx *End_transaction_commandContext) {}
 
 // EnterSet_constraint_command is called when production set_constraint_command is entered.
 func (s *BaseOscarParserListener) EnterSet_constraint_command(ctx *Set_constraint_commandContext) {}
@@ -7066,14 +7234,6 @@ func (s *BaseOscarParserListener) EnterXmlserialize_param_ident_part(ctx *Xmlser
 func (s *BaseOscarParserListener) ExitXmlserialize_param_ident_part(ctx *Xmlserialize_param_ident_partContext) {
 }
 
-// EnterSql_plus_command_no_semicolon is called when production sql_plus_command_no_semicolon is entered.
-func (s *BaseOscarParserListener) EnterSql_plus_command_no_semicolon(ctx *Sql_plus_command_no_semicolonContext) {
-}
-
-// ExitSql_plus_command_no_semicolon is called when production sql_plus_command_no_semicolon is exited.
-func (s *BaseOscarParserListener) ExitSql_plus_command_no_semicolon(ctx *Sql_plus_command_no_semicolonContext) {
-}
-
 // EnterSql_plus_command is called when production sql_plus_command is entered.
 func (s *BaseOscarParserListener) EnterSql_plus_command(ctx *Sql_plus_commandContext) {}
 
@@ -7320,6 +7480,12 @@ func (s *BaseOscarParserListener) EnterCursor_name(ctx *Cursor_nameContext) {}
 // ExitCursor_name is called when production cursor_name is exited.
 func (s *BaseOscarParserListener) ExitCursor_name(ctx *Cursor_nameContext) {}
 
+// EnterPlan_name is called when production plan_name is entered.
+func (s *BaseOscarParserListener) EnterPlan_name(ctx *Plan_nameContext) {}
+
+// ExitPlan_name is called when production plan_name is exited.
+func (s *BaseOscarParserListener) ExitPlan_name(ctx *Plan_nameContext) {}
+
 // EnterRecord_name is called when production record_name is entered.
 func (s *BaseOscarParserListener) EnterRecord_name(ctx *Record_nameContext) {}
 
@@ -7404,6 +7570,12 @@ func (s *BaseOscarParserListener) EnterGrant_object_name(ctx *Grant_object_nameC
 // ExitGrant_object_name is called when production grant_object_name is exited.
 func (s *BaseOscarParserListener) ExitGrant_object_name(ctx *Grant_object_nameContext) {}
 
+// EnterGrant_object_type is called when production grant_object_type is entered.
+func (s *BaseOscarParserListener) EnterGrant_object_type(ctx *Grant_object_typeContext) {}
+
+// ExitGrant_object_type is called when production grant_object_type is exited.
+func (s *BaseOscarParserListener) ExitGrant_object_type(ctx *Grant_object_typeContext) {}
+
 // EnterColumn_list is called when production column_list is entered.
 func (s *BaseOscarParserListener) EnterColumn_list(ctx *Column_listContext) {}
 
@@ -7473,6 +7645,12 @@ func (s *BaseOscarParserListener) EnterPrecision_part(ctx *Precision_partContext
 
 // ExitPrecision_part is called when production precision_part is exited.
 func (s *BaseOscarParserListener) ExitPrecision_part(ctx *Precision_partContext) {}
+
+// EnterOpt_array_bounds is called when production opt_array_bounds is entered.
+func (s *BaseOscarParserListener) EnterOpt_array_bounds(ctx *Opt_array_boundsContext) {}
+
+// ExitOpt_array_bounds is called when production opt_array_bounds is exited.
+func (s *BaseOscarParserListener) ExitOpt_array_bounds(ctx *Opt_array_boundsContext) {}
 
 // EnterNative_datatype_element is called when production native_datatype_element is entered.
 func (s *BaseOscarParserListener) EnterNative_datatype_element(ctx *Native_datatype_elementContext) {}
@@ -7605,3 +7783,675 @@ func (s *BaseOscarParserListener) EnterNumeric_function_name(ctx *Numeric_functi
 
 // ExitNumeric_function_name is called when production numeric_function_name is exited.
 func (s *BaseOscarParserListener) ExitNumeric_function_name(ctx *Numeric_function_nameContext) {}
+
+// EnterBulk_insert is called when production bulk_insert is entered.
+func (s *BaseOscarParserListener) EnterBulk_insert(ctx *Bulk_insertContext) {}
+
+// ExitBulk_insert is called when production bulk_insert is exited.
+func (s *BaseOscarParserListener) ExitBulk_insert(ctx *Bulk_insertContext) {}
+
+// EnterHint is called when production hint is entered.
+func (s *BaseOscarParserListener) EnterHint(ctx *HintContext) {}
+
+// ExitHint is called when production hint is exited.
+func (s *BaseOscarParserListener) ExitHint(ctx *HintContext) {}
+
+// EnterCsv_option is called when production csv_option is entered.
+func (s *BaseOscarParserListener) EnterCsv_option(ctx *Csv_optionContext) {}
+
+// ExitCsv_option is called when production csv_option is exited.
+func (s *BaseOscarParserListener) ExitCsv_option(ctx *Csv_optionContext) {}
+
+// EnterClean_audit_configuration is called when production clean_audit_configuration is entered.
+func (s *BaseOscarParserListener) EnterClean_audit_configuration(ctx *Clean_audit_configurationContext) {
+}
+
+// ExitClean_audit_configuration is called when production clean_audit_configuration is exited.
+func (s *BaseOscarParserListener) ExitClean_audit_configuration(ctx *Clean_audit_configurationContext) {
+}
+
+// EnterClean_rollback_segment is called when production clean_rollback_segment is entered.
+func (s *BaseOscarParserListener) EnterClean_rollback_segment(ctx *Clean_rollback_segmentContext) {}
+
+// ExitClean_rollback_segment is called when production clean_rollback_segment is exited.
+func (s *BaseOscarParserListener) ExitClean_rollback_segment(ctx *Clean_rollback_segmentContext) {}
+
+// EnterClose_cursor is called when production close_cursor is entered.
+func (s *BaseOscarParserListener) EnterClose_cursor(ctx *Close_cursorContext) {}
+
+// ExitClose_cursor is called when production close_cursor is exited.
+func (s *BaseOscarParserListener) ExitClose_cursor(ctx *Close_cursorContext) {}
+
+// EnterDeallocate_cursor is called when production deallocate_cursor is entered.
+func (s *BaseOscarParserListener) EnterDeallocate_cursor(ctx *Deallocate_cursorContext) {}
+
+// ExitDeallocate_cursor is called when production deallocate_cursor is exited.
+func (s *BaseOscarParserListener) ExitDeallocate_cursor(ctx *Deallocate_cursorContext) {}
+
+// EnterDeallocate_prepare is called when production deallocate_prepare is entered.
+func (s *BaseOscarParserListener) EnterDeallocate_prepare(ctx *Deallocate_prepareContext) {}
+
+// ExitDeallocate_prepare is called when production deallocate_prepare is exited.
+func (s *BaseOscarParserListener) ExitDeallocate_prepare(ctx *Deallocate_prepareContext) {}
+
+// EnterExecute_statement is called when production execute_statement is entered.
+func (s *BaseOscarParserListener) EnterExecute_statement(ctx *Execute_statementContext) {}
+
+// ExitExecute_statement is called when production execute_statement is exited.
+func (s *BaseOscarParserListener) ExitExecute_statement(ctx *Execute_statementContext) {}
+
+// EnterPrepare_stmt is called when production prepare_stmt is entered.
+func (s *BaseOscarParserListener) EnterPrepare_stmt(ctx *Prepare_stmtContext) {}
+
+// ExitPrepare_stmt is called when production prepare_stmt is exited.
+func (s *BaseOscarParserListener) ExitPrepare_stmt(ctx *Prepare_stmtContext) {}
+
+// EnterComment_on_oscar is called when production comment_on_oscar is entered.
+func (s *BaseOscarParserListener) EnterComment_on_oscar(ctx *Comment_on_oscarContext) {}
+
+// ExitComment_on_oscar is called when production comment_on_oscar is exited.
+func (s *BaseOscarParserListener) ExitComment_on_oscar(ctx *Comment_on_oscarContext) {}
+
+// EnterCdc_name is called when production cdc_name is entered.
+func (s *BaseOscarParserListener) EnterCdc_name(ctx *Cdc_nameContext) {}
+
+// ExitCdc_name is called when production cdc_name is exited.
+func (s *BaseOscarParserListener) ExitCdc_name(ctx *Cdc_nameContext) {}
+
+// EnterCreate_cdc is called when production create_cdc is entered.
+func (s *BaseOscarParserListener) EnterCreate_cdc(ctx *Create_cdcContext) {}
+
+// ExitCreate_cdc is called when production create_cdc is exited.
+func (s *BaseOscarParserListener) ExitCreate_cdc(ctx *Create_cdcContext) {}
+
+// EnterDrop_cdc is called when production drop_cdc is entered.
+func (s *BaseOscarParserListener) EnterDrop_cdc(ctx *Drop_cdcContext) {}
+
+// ExitDrop_cdc is called when production drop_cdc is exited.
+func (s *BaseOscarParserListener) ExitDrop_cdc(ctx *Drop_cdcContext) {}
+
+// EnterCek_name is called when production cek_name is entered.
+func (s *BaseOscarParserListener) EnterCek_name(ctx *Cek_nameContext) {}
+
+// ExitCek_name is called when production cek_name is exited.
+func (s *BaseOscarParserListener) ExitCek_name(ctx *Cek_nameContext) {}
+
+// EnterCmk_name is called when production cmk_name is entered.
+func (s *BaseOscarParserListener) EnterCmk_name(ctx *Cmk_nameContext) {}
+
+// ExitCmk_name is called when production cmk_name is exited.
+func (s *BaseOscarParserListener) ExitCmk_name(ctx *Cmk_nameContext) {}
+
+// EnterAlgorithm is called when production algorithm is entered.
+func (s *BaseOscarParserListener) EnterAlgorithm(ctx *AlgorithmContext) {}
+
+// ExitAlgorithm is called when production algorithm is exited.
+func (s *BaseOscarParserListener) ExitAlgorithm(ctx *AlgorithmContext) {}
+
+// EnterCek_enc_value is called when production cek_enc_value is entered.
+func (s *BaseOscarParserListener) EnterCek_enc_value(ctx *Cek_enc_valueContext) {}
+
+// ExitCek_enc_value is called when production cek_enc_value is exited.
+func (s *BaseOscarParserListener) ExitCek_enc_value(ctx *Cek_enc_valueContext) {}
+
+// EnterCreate_column_encryption_key is called when production create_column_encryption_key is entered.
+func (s *BaseOscarParserListener) EnterCreate_column_encryption_key(ctx *Create_column_encryption_keyContext) {
+}
+
+// ExitCreate_column_encryption_key is called when production create_column_encryption_key is exited.
+func (s *BaseOscarParserListener) ExitCreate_column_encryption_key(ctx *Create_column_encryption_keyContext) {
+}
+
+// EnterCek_clause is called when production cek_clause is entered.
+func (s *BaseOscarParserListener) EnterCek_clause(ctx *Cek_clauseContext) {}
+
+// ExitCek_clause is called when production cek_clause is exited.
+func (s *BaseOscarParserListener) ExitCek_clause(ctx *Cek_clauseContext) {}
+
+// EnterDrop_column_encryption_key is called when production drop_column_encryption_key is entered.
+func (s *BaseOscarParserListener) EnterDrop_column_encryption_key(ctx *Drop_column_encryption_keyContext) {
+}
+
+// ExitDrop_column_encryption_key is called when production drop_column_encryption_key is exited.
+func (s *BaseOscarParserListener) ExitDrop_column_encryption_key(ctx *Drop_column_encryption_keyContext) {
+}
+
+// EnterCreate_column_master_key is called when production create_column_master_key is entered.
+func (s *BaseOscarParserListener) EnterCreate_column_master_key(ctx *Create_column_master_keyContext) {
+}
+
+// ExitCreate_column_master_key is called when production create_column_master_key is exited.
+func (s *BaseOscarParserListener) ExitCreate_column_master_key(ctx *Create_column_master_keyContext) {
+}
+
+// EnterCmk_clause is called when production cmk_clause is entered.
+func (s *BaseOscarParserListener) EnterCmk_clause(ctx *Cmk_clauseContext) {}
+
+// ExitCmk_clause is called when production cmk_clause is exited.
+func (s *BaseOscarParserListener) ExitCmk_clause(ctx *Cmk_clauseContext) {}
+
+// EnterKey_store_name is called when production key_store_name is entered.
+func (s *BaseOscarParserListener) EnterKey_store_name(ctx *Key_store_nameContext) {}
+
+// ExitKey_store_name is called when production key_store_name is exited.
+func (s *BaseOscarParserListener) ExitKey_store_name(ctx *Key_store_nameContext) {}
+
+// EnterKey_path_str is called when production key_path_str is entered.
+func (s *BaseOscarParserListener) EnterKey_path_str(ctx *Key_path_strContext) {}
+
+// ExitKey_path_str is called when production key_path_str is exited.
+func (s *BaseOscarParserListener) ExitKey_path_str(ctx *Key_path_strContext) {}
+
+// EnterDrop_column_master_key is called when production drop_column_master_key is entered.
+func (s *BaseOscarParserListener) EnterDrop_column_master_key(ctx *Drop_column_master_keyContext) {}
+
+// ExitDrop_column_master_key is called when production drop_column_master_key is exited.
+func (s *BaseOscarParserListener) ExitDrop_column_master_key(ctx *Drop_column_master_keyContext) {}
+
+// EnterRac_clause is called when production rac_clause is entered.
+func (s *BaseOscarParserListener) EnterRac_clause(ctx *Rac_clauseContext) {}
+
+// ExitRac_clause is called when production rac_clause is exited.
+func (s *BaseOscarParserListener) ExitRac_clause(ctx *Rac_clauseContext) {}
+
+// EnterVotediskpath is called when production votediskpath is entered.
+func (s *BaseOscarParserListener) EnterVotediskpath(ctx *VotediskpathContext) {}
+
+// ExitVotediskpath is called when production votediskpath is exited.
+func (s *BaseOscarParserListener) ExitVotediskpath(ctx *VotediskpathContext) {}
+
+// EnterRac_node_info is called when production rac_node_info is entered.
+func (s *BaseOscarParserListener) EnterRac_node_info(ctx *Rac_node_infoContext) {}
+
+// ExitRac_node_info is called when production rac_node_info is exited.
+func (s *BaseOscarParserListener) ExitRac_node_info(ctx *Rac_node_infoContext) {}
+
+// EnterNodeip is called when production nodeip is entered.
+func (s *BaseOscarParserListener) EnterNodeip(ctx *NodeipContext) {}
+
+// ExitNodeip is called when production nodeip is exited.
+func (s *BaseOscarParserListener) ExitNodeip(ctx *NodeipContext) {}
+
+// EnterNodeid is called when production nodeid is entered.
+func (s *BaseOscarParserListener) EnterNodeid(ctx *NodeidContext) {}
+
+// ExitNodeid is called when production nodeid is exited.
+func (s *BaseOscarParserListener) ExitNodeid(ctx *NodeidContext) {}
+
+// EnterThreadid is called when production threadid is entered.
+func (s *BaseOscarParserListener) EnterThreadid(ctx *ThreadidContext) {}
+
+// ExitThreadid is called when production threadid is exited.
+func (s *BaseOscarParserListener) ExitThreadid(ctx *ThreadidContext) {}
+
+// EnterLocale_option is called when production locale_option is entered.
+func (s *BaseOscarParserListener) EnterLocale_option(ctx *Locale_optionContext) {}
+
+// ExitLocale_option is called when production locale_option is exited.
+func (s *BaseOscarParserListener) ExitLocale_option(ctx *Locale_optionContext) {}
+
+// EnterCtype is called when production ctype is entered.
+func (s *BaseOscarParserListener) EnterCtype(ctx *CtypeContext) {}
+
+// ExitCtype is called when production ctype is exited.
+func (s *BaseOscarParserListener) ExitCtype(ctx *CtypeContext) {}
+
+// EnterCollate is called when production collate is entered.
+func (s *BaseOscarParserListener) EnterCollate(ctx *CollateContext) {}
+
+// ExitCollate is called when production collate is exited.
+func (s *BaseOscarParserListener) ExitCollate(ctx *CollateContext) {}
+
+// EnterSys_user_clause is called when production sys_user_clause is entered.
+func (s *BaseOscarParserListener) EnterSys_user_clause(ctx *Sys_user_clauseContext) {}
+
+// ExitSys_user_clause is called when production sys_user_clause is exited.
+func (s *BaseOscarParserListener) ExitSys_user_clause(ctx *Sys_user_clauseContext) {}
+
+// EnterUsername is called when production username is entered.
+func (s *BaseOscarParserListener) EnterUsername(ctx *UsernameContext) {}
+
+// ExitUsername is called when production username is exited.
+func (s *BaseOscarParserListener) ExitUsername(ctx *UsernameContext) {}
+
+// EnterPassword_auth is called when production password_auth is entered.
+func (s *BaseOscarParserListener) EnterPassword_auth(ctx *Password_authContext) {}
+
+// ExitPassword_auth is called when production password_auth is exited.
+func (s *BaseOscarParserListener) ExitPassword_auth(ctx *Password_authContext) {}
+
+// EnterDelete_alog_clause is called when production delete_alog_clause is entered.
+func (s *BaseOscarParserListener) EnterDelete_alog_clause(ctx *Delete_alog_clauseContext) {}
+
+// ExitDelete_alog_clause is called when production delete_alog_clause is exited.
+func (s *BaseOscarParserListener) ExitDelete_alog_clause(ctx *Delete_alog_clauseContext) {}
+
+// EnterCtrl_file_clause is called when production ctrl_file_clause is entered.
+func (s *BaseOscarParserListener) EnterCtrl_file_clause(ctx *Ctrl_file_clauseContext) {}
+
+// ExitCtrl_file_clause is called when production ctrl_file_clause is exited.
+func (s *BaseOscarParserListener) ExitCtrl_file_clause(ctx *Ctrl_file_clauseContext) {}
+
+// EnterAlter_rac_clause is called when production alter_rac_clause is entered.
+func (s *BaseOscarParserListener) EnterAlter_rac_clause(ctx *Alter_rac_clauseContext) {}
+
+// ExitAlter_rac_clause is called when production alter_rac_clause is exited.
+func (s *BaseOscarParserListener) ExitAlter_rac_clause(ctx *Alter_rac_clauseContext) {}
+
+// EnterCreate_domain is called when production create_domain is entered.
+func (s *BaseOscarParserListener) EnterCreate_domain(ctx *Create_domainContext) {}
+
+// ExitCreate_domain is called when production create_domain is exited.
+func (s *BaseOscarParserListener) ExitCreate_domain(ctx *Create_domainContext) {}
+
+// EnterConstraint_spec is called when production constraint_spec is entered.
+func (s *BaseOscarParserListener) EnterConstraint_spec(ctx *Constraint_specContext) {}
+
+// ExitConstraint_spec is called when production constraint_spec is exited.
+func (s *BaseOscarParserListener) ExitConstraint_spec(ctx *Constraint_specContext) {}
+
+// EnterDrop_domain is called when production drop_domain is entered.
+func (s *BaseOscarParserListener) EnterDrop_domain(ctx *Drop_domainContext) {}
+
+// ExitDrop_domain is called when production drop_domain is exited.
+func (s *BaseOscarParserListener) ExitDrop_domain(ctx *Drop_domainContext) {}
+
+// EnterCreate_external_table is called when production create_external_table is entered.
+func (s *BaseOscarParserListener) EnterCreate_external_table(ctx *Create_external_tableContext) {}
+
+// ExitCreate_external_table is called when production create_external_table is exited.
+func (s *BaseOscarParserListener) ExitCreate_external_table(ctx *Create_external_tableContext) {}
+
+// EnterAccess_parameters is called when production access_parameters is entered.
+func (s *BaseOscarParserListener) EnterAccess_parameters(ctx *Access_parametersContext) {}
+
+// ExitAccess_parameters is called when production access_parameters is exited.
+func (s *BaseOscarParserListener) ExitAccess_parameters(ctx *Access_parametersContext) {}
+
+// EnterCreate_fulltext_index is called when production create_fulltext_index is entered.
+func (s *BaseOscarParserListener) EnterCreate_fulltext_index(ctx *Create_fulltext_indexContext) {}
+
+// ExitCreate_fulltext_index is called when production create_fulltext_index is exited.
+func (s *BaseOscarParserListener) ExitCreate_fulltext_index(ctx *Create_fulltext_indexContext) {}
+
+// EnterAlter_fulltext_index is called when production alter_fulltext_index is entered.
+func (s *BaseOscarParserListener) EnterAlter_fulltext_index(ctx *Alter_fulltext_indexContext) {}
+
+// ExitAlter_fulltext_index is called when production alter_fulltext_index is exited.
+func (s *BaseOscarParserListener) ExitAlter_fulltext_index(ctx *Alter_fulltext_indexContext) {}
+
+// EnterDrop_fulltext_index is called when production drop_fulltext_index is entered.
+func (s *BaseOscarParserListener) EnterDrop_fulltext_index(ctx *Drop_fulltext_indexContext) {}
+
+// ExitDrop_fulltext_index is called when production drop_fulltext_index is exited.
+func (s *BaseOscarParserListener) ExitDrop_fulltext_index(ctx *Drop_fulltext_indexContext) {}
+
+// EnterOptimize_fulltext_index is called when production optimize_fulltext_index is entered.
+func (s *BaseOscarParserListener) EnterOptimize_fulltext_index(ctx *Optimize_fulltext_indexContext) {}
+
+// ExitOptimize_fulltext_index is called when production optimize_fulltext_index is exited.
+func (s *BaseOscarParserListener) ExitOptimize_fulltext_index(ctx *Optimize_fulltext_indexContext) {}
+
+// EnterMergeindexname is called when production mergeindexname is entered.
+func (s *BaseOscarParserListener) EnterMergeindexname(ctx *MergeindexnameContext) {}
+
+// ExitMergeindexname is called when production mergeindexname is exited.
+func (s *BaseOscarParserListener) ExitMergeindexname(ctx *MergeindexnameContext) {}
+
+// EnterCreate_resource_label is called when production create_resource_label is entered.
+func (s *BaseOscarParserListener) EnterCreate_resource_label(ctx *Create_resource_labelContext) {}
+
+// ExitCreate_resource_label is called when production create_resource_label is exited.
+func (s *BaseOscarParserListener) ExitCreate_resource_label(ctx *Create_resource_labelContext) {}
+
+// EnterAlter_resource_label is called when production alter_resource_label is entered.
+func (s *BaseOscarParserListener) EnterAlter_resource_label(ctx *Alter_resource_labelContext) {}
+
+// ExitAlter_resource_label is called when production alter_resource_label is exited.
+func (s *BaseOscarParserListener) ExitAlter_resource_label(ctx *Alter_resource_labelContext) {}
+
+// EnterDrop_resource_label is called when production drop_resource_label is entered.
+func (s *BaseOscarParserListener) EnterDrop_resource_label(ctx *Drop_resource_labelContext) {}
+
+// ExitDrop_resource_label is called when production drop_resource_label is exited.
+func (s *BaseOscarParserListener) ExitDrop_resource_label(ctx *Drop_resource_labelContext) {}
+
+// EnterCreate_masking_policy is called when production create_masking_policy is entered.
+func (s *BaseOscarParserListener) EnterCreate_masking_policy(ctx *Create_masking_policyContext) {}
+
+// ExitCreate_masking_policy is called when production create_masking_policy is exited.
+func (s *BaseOscarParserListener) ExitCreate_masking_policy(ctx *Create_masking_policyContext) {}
+
+// EnterMasking_clause is called when production masking_clause is entered.
+func (s *BaseOscarParserListener) EnterMasking_clause(ctx *Masking_clauseContext) {}
+
+// ExitMasking_clause is called when production masking_clause is exited.
+func (s *BaseOscarParserListener) ExitMasking_clause(ctx *Masking_clauseContext) {}
+
+// EnterMasking_function is called when production masking_function is entered.
+func (s *BaseOscarParserListener) EnterMasking_function(ctx *Masking_functionContext) {}
+
+// ExitMasking_function is called when production masking_function is exited.
+func (s *BaseOscarParserListener) ExitMasking_function(ctx *Masking_functionContext) {}
+
+// EnterPolicy_filter is called when production policy_filter is entered.
+func (s *BaseOscarParserListener) EnterPolicy_filter(ctx *Policy_filterContext) {}
+
+// ExitPolicy_filter is called when production policy_filter is exited.
+func (s *BaseOscarParserListener) ExitPolicy_filter(ctx *Policy_filterContext) {}
+
+// EnterPolicy_filter_on is called when production policy_filter_on is entered.
+func (s *BaseOscarParserListener) EnterPolicy_filter_on(ctx *Policy_filter_onContext) {}
+
+// ExitPolicy_filter_on is called when production policy_filter_on is exited.
+func (s *BaseOscarParserListener) ExitPolicy_filter_on(ctx *Policy_filter_onContext) {}
+
+// EnterAlter_masking_policy is called when production alter_masking_policy is entered.
+func (s *BaseOscarParserListener) EnterAlter_masking_policy(ctx *Alter_masking_policyContext) {}
+
+// ExitAlter_masking_policy is called when production alter_masking_policy is exited.
+func (s *BaseOscarParserListener) ExitAlter_masking_policy(ctx *Alter_masking_policyContext) {}
+
+// EnterDrop_masking_policy is called when production drop_masking_policy is entered.
+func (s *BaseOscarParserListener) EnterDrop_masking_policy(ctx *Drop_masking_policyContext) {}
+
+// ExitDrop_masking_policy is called when production drop_masking_policy is exited.
+func (s *BaseOscarParserListener) ExitDrop_masking_policy(ctx *Drop_masking_policyContext) {}
+
+// EnterPolicy_add_comments is called when production policy_add_comments is entered.
+func (s *BaseOscarParserListener) EnterPolicy_add_comments(ctx *Policy_add_commentsContext) {}
+
+// ExitPolicy_add_comments is called when production policy_add_comments is exited.
+func (s *BaseOscarParserListener) ExitPolicy_add_comments(ctx *Policy_add_commentsContext) {}
+
+// EnterPolicy_modify_masking is called when production policy_modify_masking is entered.
+func (s *BaseOscarParserListener) EnterPolicy_modify_masking(ctx *Policy_modify_maskingContext) {}
+
+// ExitPolicy_modify_masking is called when production policy_modify_masking is exited.
+func (s *BaseOscarParserListener) ExitPolicy_modify_masking(ctx *Policy_modify_maskingContext) {}
+
+// EnterPolicy_modify_filter is called when production policy_modify_filter is entered.
+func (s *BaseOscarParserListener) EnterPolicy_modify_filter(ctx *Policy_modify_filterContext) {}
+
+// ExitPolicy_modify_filter is called when production policy_modify_filter is exited.
+func (s *BaseOscarParserListener) ExitPolicy_modify_filter(ctx *Policy_modify_filterContext) {}
+
+// EnterPolicy_drop_filter is called when production policy_drop_filter is entered.
+func (s *BaseOscarParserListener) EnterPolicy_drop_filter(ctx *Policy_drop_filterContext) {}
+
+// ExitPolicy_drop_filter is called when production policy_drop_filter is exited.
+func (s *BaseOscarParserListener) ExitPolicy_drop_filter(ctx *Policy_drop_filterContext) {}
+
+// EnterStaistics_name is called when production staistics_name is entered.
+func (s *BaseOscarParserListener) EnterStaistics_name(ctx *Staistics_nameContext) {}
+
+// ExitStaistics_name is called when production staistics_name is exited.
+func (s *BaseOscarParserListener) ExitStaistics_name(ctx *Staistics_nameContext) {}
+
+// EnterCreate_multiple_statistics is called when production create_multiple_statistics is entered.
+func (s *BaseOscarParserListener) EnterCreate_multiple_statistics(ctx *Create_multiple_statisticsContext) {
+}
+
+// ExitCreate_multiple_statistics is called when production create_multiple_statistics is exited.
+func (s *BaseOscarParserListener) ExitCreate_multiple_statistics(ctx *Create_multiple_statisticsContext) {
+}
+
+// EnterAlter_multiple_statistics is called when production alter_multiple_statistics is entered.
+func (s *BaseOscarParserListener) EnterAlter_multiple_statistics(ctx *Alter_multiple_statisticsContext) {
+}
+
+// ExitAlter_multiple_statistics is called when production alter_multiple_statistics is exited.
+func (s *BaseOscarParserListener) ExitAlter_multiple_statistics(ctx *Alter_multiple_statisticsContext) {
+}
+
+// EnterUpdate_multiple_statistics is called when production update_multiple_statistics is entered.
+func (s *BaseOscarParserListener) EnterUpdate_multiple_statistics(ctx *Update_multiple_statisticsContext) {
+}
+
+// ExitUpdate_multiple_statistics is called when production update_multiple_statistics is exited.
+func (s *BaseOscarParserListener) ExitUpdate_multiple_statistics(ctx *Update_multiple_statisticsContext) {
+}
+
+// EnterDrop_multiple_statistics is called when production drop_multiple_statistics is entered.
+func (s *BaseOscarParserListener) EnterDrop_multiple_statistics(ctx *Drop_multiple_statisticsContext) {
+}
+
+// ExitDrop_multiple_statistics is called when production drop_multiple_statistics is exited.
+func (s *BaseOscarParserListener) ExitDrop_multiple_statistics(ctx *Drop_multiple_statisticsContext) {
+}
+
+// EnterSchemaname is called when production schemaname is entered.
+func (s *BaseOscarParserListener) EnterSchemaname(ctx *SchemanameContext) {}
+
+// ExitSchemaname is called when production schemaname is exited.
+func (s *BaseOscarParserListener) ExitSchemaname(ctx *SchemanameContext) {}
+
+// EnterCreate_schema is called when production create_schema is entered.
+func (s *BaseOscarParserListener) EnterCreate_schema(ctx *Create_schemaContext) {}
+
+// ExitCreate_schema is called when production create_schema is exited.
+func (s *BaseOscarParserListener) ExitCreate_schema(ctx *Create_schemaContext) {}
+
+// EnterAlter_schema is called when production alter_schema is entered.
+func (s *BaseOscarParserListener) EnterAlter_schema(ctx *Alter_schemaContext) {}
+
+// ExitAlter_schema is called when production alter_schema is exited.
+func (s *BaseOscarParserListener) ExitAlter_schema(ctx *Alter_schemaContext) {}
+
+// EnterDrop_schema is called when production drop_schema is entered.
+func (s *BaseOscarParserListener) EnterDrop_schema(ctx *Drop_schemaContext) {}
+
+// ExitDrop_schema is called when production drop_schema is exited.
+func (s *BaseOscarParserListener) ExitDrop_schema(ctx *Drop_schemaContext) {}
+
+// EnterCreate_statistics is called when production create_statistics is entered.
+func (s *BaseOscarParserListener) EnterCreate_statistics(ctx *Create_statisticsContext) {}
+
+// ExitCreate_statistics is called when production create_statistics is exited.
+func (s *BaseOscarParserListener) ExitCreate_statistics(ctx *Create_statisticsContext) {}
+
+// EnterAlter_statistics is called when production alter_statistics is entered.
+func (s *BaseOscarParserListener) EnterAlter_statistics(ctx *Alter_statisticsContext) {}
+
+// ExitAlter_statistics is called when production alter_statistics is exited.
+func (s *BaseOscarParserListener) ExitAlter_statistics(ctx *Alter_statisticsContext) {}
+
+// EnterUpdate_statistics is called when production update_statistics is entered.
+func (s *BaseOscarParserListener) EnterUpdate_statistics(ctx *Update_statisticsContext) {}
+
+// ExitUpdate_statistics is called when production update_statistics is exited.
+func (s *BaseOscarParserListener) ExitUpdate_statistics(ctx *Update_statisticsContext) {}
+
+// EnterDrop_statistics is called when production drop_statistics is entered.
+func (s *BaseOscarParserListener) EnterDrop_statistics(ctx *Drop_statisticsContext) {}
+
+// ExitDrop_statistics is called when production drop_statistics is exited.
+func (s *BaseOscarParserListener) ExitDrop_statistics(ctx *Drop_statisticsContext) {}
+
+// EnterAlter_system is called when production alter_system is entered.
+func (s *BaseOscarParserListener) EnterAlter_system(ctx *Alter_systemContext) {}
+
+// ExitAlter_system is called when production alter_system is exited.
+func (s *BaseOscarParserListener) ExitAlter_system(ctx *Alter_systemContext) {}
+
+// EnterUndo_clause is called when production undo_clause is entered.
+func (s *BaseOscarParserListener) EnterUndo_clause(ctx *Undo_clauseContext) {}
+
+// ExitUndo_clause is called when production undo_clause is exited.
+func (s *BaseOscarParserListener) ExitUndo_clause(ctx *Undo_clauseContext) {}
+
+// EnterWallet_clause is called when production wallet_clause is entered.
+func (s *BaseOscarParserListener) EnterWallet_clause(ctx *Wallet_clauseContext) {}
+
+// ExitWallet_clause is called when production wallet_clause is exited.
+func (s *BaseOscarParserListener) ExitWallet_clause(ctx *Wallet_clauseContext) {}
+
+// EnterCreate_wallet_clause is called when production create_wallet_clause is entered.
+func (s *BaseOscarParserListener) EnterCreate_wallet_clause(ctx *Create_wallet_clauseContext) {}
+
+// ExitCreate_wallet_clause is called when production create_wallet_clause is exited.
+func (s *BaseOscarParserListener) ExitCreate_wallet_clause(ctx *Create_wallet_clauseContext) {}
+
+// EnterOpen_wallet_clause is called when production open_wallet_clause is entered.
+func (s *BaseOscarParserListener) EnterOpen_wallet_clause(ctx *Open_wallet_clauseContext) {}
+
+// ExitOpen_wallet_clause is called when production open_wallet_clause is exited.
+func (s *BaseOscarParserListener) ExitOpen_wallet_clause(ctx *Open_wallet_clauseContext) {}
+
+// EnterClose_wallet_clause is called when production close_wallet_clause is entered.
+func (s *BaseOscarParserListener) EnterClose_wallet_clause(ctx *Close_wallet_clauseContext) {}
+
+// ExitClose_wallet_clause is called when production close_wallet_clause is exited.
+func (s *BaseOscarParserListener) ExitClose_wallet_clause(ctx *Close_wallet_clauseContext) {}
+
+// EnterModify_wallet_clause is called when production modify_wallet_clause is entered.
+func (s *BaseOscarParserListener) EnterModify_wallet_clause(ctx *Modify_wallet_clauseContext) {}
+
+// ExitModify_wallet_clause is called when production modify_wallet_clause is exited.
+func (s *BaseOscarParserListener) ExitModify_wallet_clause(ctx *Modify_wallet_clauseContext) {}
+
+// EnterBackup_wallet_clause is called when production backup_wallet_clause is entered.
+func (s *BaseOscarParserListener) EnterBackup_wallet_clause(ctx *Backup_wallet_clauseContext) {}
+
+// ExitBackup_wallet_clause is called when production backup_wallet_clause is exited.
+func (s *BaseOscarParserListener) ExitBackup_wallet_clause(ctx *Backup_wallet_clauseContext) {}
+
+// EnterAlter_wallet_password_clause is called when production alter_wallet_password_clause is entered.
+func (s *BaseOscarParserListener) EnterAlter_wallet_password_clause(ctx *Alter_wallet_password_clauseContext) {
+}
+
+// ExitAlter_wallet_password_clause is called when production alter_wallet_password_clause is exited.
+func (s *BaseOscarParserListener) ExitAlter_wallet_password_clause(ctx *Alter_wallet_password_clauseContext) {
+}
+
+// EnterDrop_savepoint is called when production drop_savepoint is entered.
+func (s *BaseOscarParserListener) EnterDrop_savepoint(ctx *Drop_savepointContext) {}
+
+// ExitDrop_savepoint is called when production drop_savepoint is exited.
+func (s *BaseOscarParserListener) ExitDrop_savepoint(ctx *Drop_savepointContext) {}
+
+// EnterCursor_stmt is called when production cursor_stmt is entered.
+func (s *BaseOscarParserListener) EnterCursor_stmt(ctx *Cursor_stmtContext) {}
+
+// ExitCursor_stmt is called when production cursor_stmt is exited.
+func (s *BaseOscarParserListener) ExitCursor_stmt(ctx *Cursor_stmtContext) {}
+
+// EnterGet_description_of is called when production get_description_of is entered.
+func (s *BaseOscarParserListener) EnterGet_description_of(ctx *Get_description_ofContext) {}
+
+// ExitGet_description_of is called when production get_description_of is exited.
+func (s *BaseOscarParserListener) ExitGet_description_of(ctx *Get_description_ofContext) {}
+
+// EnterGet_paraminfo_for is called when production get_paraminfo_for is entered.
+func (s *BaseOscarParserListener) EnterGet_paraminfo_for(ctx *Get_paraminfo_forContext) {}
+
+// ExitGet_paraminfo_for is called when production get_paraminfo_for is exited.
+func (s *BaseOscarParserListener) ExitGet_paraminfo_for(ctx *Get_paraminfo_forContext) {}
+
+// EnterGet_rowdescription_for is called when production get_rowdescription_for is entered.
+func (s *BaseOscarParserListener) EnterGet_rowdescription_for(ctx *Get_rowdescription_forContext) {}
+
+// ExitGet_rowdescription_for is called when production get_rowdescription_for is exited.
+func (s *BaseOscarParserListener) ExitGet_rowdescription_for(ctx *Get_rowdescription_forContext) {}
+
+// EnterKill_stmt is called when production kill_stmt is entered.
+func (s *BaseOscarParserListener) EnterKill_stmt(ctx *Kill_stmtContext) {}
+
+// ExitKill_stmt is called when production kill_stmt is exited.
+func (s *BaseOscarParserListener) ExitKill_stmt(ctx *Kill_stmtContext) {}
+
+// EnterRefresh_materialized_view is called when production refresh_materialized_view is entered.
+func (s *BaseOscarParserListener) EnterRefresh_materialized_view(ctx *Refresh_materialized_viewContext) {
+}
+
+// ExitRefresh_materialized_view is called when production refresh_materialized_view is exited.
+func (s *BaseOscarParserListener) ExitRefresh_materialized_view(ctx *Refresh_materialized_viewContext) {
+}
+
+// EnterStart_audit is called when production start_audit is entered.
+func (s *BaseOscarParserListener) EnterStart_audit(ctx *Start_auditContext) {}
+
+// ExitStart_audit is called when production start_audit is exited.
+func (s *BaseOscarParserListener) ExitStart_audit(ctx *Start_auditContext) {}
+
+// EnterShutdown_stmt is called when production shutdown_stmt is entered.
+func (s *BaseOscarParserListener) EnterShutdown_stmt(ctx *Shutdown_stmtContext) {}
+
+// ExitShutdown_stmt is called when production shutdown_stmt is exited.
+func (s *BaseOscarParserListener) ExitShutdown_stmt(ctx *Shutdown_stmtContext) {}
+
+// EnterSet_autocommit is called when production set_autocommit is entered.
+func (s *BaseOscarParserListener) EnterSet_autocommit(ctx *Set_autocommitContext) {}
+
+// ExitSet_autocommit is called when production set_autocommit is exited.
+func (s *BaseOscarParserListener) ExitSet_autocommit(ctx *Set_autocommitContext) {}
+
+// EnterReset_stmt is called when production reset_stmt is entered.
+func (s *BaseOscarParserListener) EnterReset_stmt(ctx *Reset_stmtContext) {}
+
+// ExitReset_stmt is called when production reset_stmt is exited.
+func (s *BaseOscarParserListener) ExitReset_stmt(ctx *Reset_stmtContext) {}
+
+// EnterShow_stmt is called when production show_stmt is entered.
+func (s *BaseOscarParserListener) EnterShow_stmt(ctx *Show_stmtContext) {}
+
+// ExitShow_stmt is called when production show_stmt is exited.
+func (s *BaseOscarParserListener) ExitShow_stmt(ctx *Show_stmtContext) {}
+
+// EnterReplace_statement is called when production replace_statement is entered.
+func (s *BaseOscarParserListener) EnterReplace_statement(ctx *Replace_statementContext) {}
+
+// ExitReplace_statement is called when production replace_statement is exited.
+func (s *BaseOscarParserListener) ExitReplace_statement(ctx *Replace_statementContext) {}
+
+// EnterLimitClause is called when production limitClause is entered.
+func (s *BaseOscarParserListener) EnterLimitClause(ctx *LimitClauseContext) {}
+
+// ExitLimitClause is called when production limitClause is exited.
+func (s *BaseOscarParserListener) ExitLimitClause(ctx *LimitClauseContext) {}
+
+// EnterLimitOptions is called when production limitOptions is entered.
+func (s *BaseOscarParserListener) EnterLimitOptions(ctx *LimitOptionsContext) {}
+
+// ExitLimitOptions is called when production limitOptions is exited.
+func (s *BaseOscarParserListener) ExitLimitOptions(ctx *LimitOptionsContext) {}
+
+// EnterLimitOption is called when production limitOption is entered.
+func (s *BaseOscarParserListener) EnterLimitOption(ctx *LimitOptionContext) {}
+
+// ExitLimitOption is called when production limitOption is exited.
+func (s *BaseOscarParserListener) ExitLimitOption(ctx *LimitOptionContext) {}
+
+// EnterTop_clause is called when production top_clause is entered.
+func (s *BaseOscarParserListener) EnterTop_clause(ctx *Top_clauseContext) {}
+
+// ExitTop_clause is called when production top_clause is exited.
+func (s *BaseOscarParserListener) ExitTop_clause(ctx *Top_clauseContext) {}
+
+// EnterTypename is called when production typename is entered.
+func (s *BaseOscarParserListener) EnterTypename(ctx *TypenameContext) {}
+
+// ExitTypename is called when production typename is exited.
+func (s *BaseOscarParserListener) ExitTypename(ctx *TypenameContext) {}
+
+// EnterModify_table_default_attrs is called when production modify_table_default_attrs is entered.
+func (s *BaseOscarParserListener) EnterModify_table_default_attrs(ctx *Modify_table_default_attrsContext) {
+}
+
+// ExitModify_table_default_attrs is called when production modify_table_default_attrs is exited.
+func (s *BaseOscarParserListener) ExitModify_table_default_attrs(ctx *Modify_table_default_attrsContext) {
+}
+
+// EnterSet_subpartition_template is called when production set_subpartition_template is entered.
+func (s *BaseOscarParserListener) EnterSet_subpartition_template(ctx *Set_subpartition_templateContext) {
+}
+
+// ExitSet_subpartition_template is called when production set_subpartition_template is exited.
+func (s *BaseOscarParserListener) ExitSet_subpartition_template(ctx *Set_subpartition_templateContext) {
+}
+
+// EnterPartition_attributes is called when production partition_attributes is entered.
+func (s *BaseOscarParserListener) EnterPartition_attributes(ctx *Partition_attributesContext) {}
+
+// ExitPartition_attributes is called when production partition_attributes is exited.
+func (s *BaseOscarParserListener) ExitPartition_attributes(ctx *Partition_attributesContext) {}

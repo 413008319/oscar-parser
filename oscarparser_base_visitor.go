@@ -479,6 +479,10 @@ func (v *BaseOscarParserVisitor) VisitDml_event_clause(ctx *Dml_event_clauseCont
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseOscarParserVisitor) VisitDefer_option(ctx *Defer_optionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseOscarParserVisitor) VisitDml_event_element(ctx *Dml_event_elementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -680,6 +684,10 @@ func (v *BaseOscarParserVisitor) VisitSequence_spec(ctx *Sequence_specContext) i
 }
 
 func (v *BaseOscarParserVisitor) VisitSequence_start_clause(ctx *Sequence_start_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitSequence_restart_clause(ctx *Sequence_restart_clauseContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -1719,6 +1727,14 @@ func (v *BaseOscarParserVisitor) VisitInline_constraint(ctx *Inline_constraintCo
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseOscarParserVisitor) VisitFull_encryption(ctx *Full_encryptionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitEncryption_type(ctx *Encryption_typeContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseOscarParserVisitor) VisitInline_ref_constraint(ctx *Inline_ref_constraintContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -1788,6 +1804,10 @@ func (v *BaseOscarParserVisitor) VisitCreate_tablespace(ctx *Create_tablespaceCo
 }
 
 func (v *BaseOscarParserVisitor) VisitPermanent_tablespace_clause(ctx *Permanent_tablespace_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDefault_storage_option(ctx *Default_storage_optionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -2051,6 +2071,10 @@ func (v *BaseOscarParserVisitor) VisitDrop_materialized_view(ctx *Drop_materiali
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseOscarParserVisitor) VisitDrop_materialized_view_log(ctx *Drop_materialized_view_logContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseOscarParserVisitor) VisitCreate_context(ctx *Create_contextContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -2184,6 +2208,22 @@ func (v *BaseOscarParserVisitor) VisitCollation_name(ctx *Collation_nameContext)
 }
 
 func (v *BaseOscarParserVisitor) VisitTable_properties(ctx *Table_propertiesContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitLock_option(ctx *Lock_optionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitOpt_start(ctx *Opt_startContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitOn_commit_clause(ctx *On_commit_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAuto_increment_set(ctx *Auto_increment_setContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -3011,7 +3051,23 @@ func (v *BaseOscarParserVisitor) VisitMerge_table_partition(ctx *Merge_table_par
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseOscarParserVisitor) VisitMerge_table_subpartition(ctx *Merge_table_subpartitionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseOscarParserVisitor) VisitModify_table_partition(ctx *Modify_table_partitionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitMove_table_partition(ctx *Move_table_partitionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitModify_table_subpartition(ctx *Modify_table_subpartitionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitMove_table_subpartition(ctx *Move_table_subpartitionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -3019,7 +3075,15 @@ func (v *BaseOscarParserVisitor) VisitSplit_table_partition(ctx *Split_table_par
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseOscarParserVisitor) VisitSplit_table_subpartition(ctx *Split_table_subpartitionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseOscarParserVisitor) VisitTruncate_table_partition(ctx *Truncate_table_partitionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitRename_table_partition(ctx *Rename_table_partitionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -3028,6 +3092,10 @@ func (v *BaseOscarParserVisitor) VisitExchange_table_partition(ctx *Exchange_tab
 }
 
 func (v *BaseOscarParserVisitor) VisitCoalesce_table_partition(ctx *Coalesce_table_partitionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCoalesce_table_subpartition(ctx *Coalesce_table_subpartitionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -3128,6 +3196,22 @@ func (v *BaseOscarParserVisitor) VisitIndex_org_overflow_clause(ctx *Index_org_o
 }
 
 func (v *BaseOscarParserVisitor) VisitColumn_clauses(ctx *Column_clausesContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlter_column_default(ctx *Alter_column_defaultContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlter_column_nullable(ctx *Alter_column_nullableContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlter_column_type(ctx *Alter_column_typeContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlter_table_rebuild(ctx *Alter_table_rebuildContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -3375,7 +3459,15 @@ func (v *BaseOscarParserVisitor) VisitReferences_clause(ctx *References_clauseCo
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseOscarParserVisitor) VisitKey_actions(ctx *Key_actionsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseOscarParserVisitor) VisitOn_delete_clause(ctx *On_delete_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitOn_update_clause(ctx *On_update_clauseContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -3647,6 +3739,10 @@ func (v *BaseOscarParserVisitor) VisitFetch_statement(ctx *Fetch_statementContex
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseOscarParserVisitor) VisitMove_statement(ctx *Move_statementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseOscarParserVisitor) VisitVariable_or_collection(ctx *Variable_or_collectionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -3660,6 +3756,14 @@ func (v *BaseOscarParserVisitor) VisitTransaction_control_statements(ctx *Transa
 }
 
 func (v *BaseOscarParserVisitor) VisitSet_transaction_command(ctx *Set_transaction_commandContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitStart_transaction_command(ctx *Start_transaction_commandContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitEnd_transaction_command(ctx *End_transaction_commandContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -4431,10 +4535,6 @@ func (v *BaseOscarParserVisitor) VisitXmlserialize_param_ident_part(ctx *Xmlseri
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseOscarParserVisitor) VisitSql_plus_command_no_semicolon(ctx *Sql_plus_command_no_semicolonContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseOscarParserVisitor) VisitSql_plus_command(ctx *Sql_plus_commandContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -4595,6 +4695,10 @@ func (v *BaseOscarParserVisitor) VisitCursor_name(ctx *Cursor_nameContext) inter
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseOscarParserVisitor) VisitPlan_name(ctx *Plan_nameContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseOscarParserVisitor) VisitRecord_name(ctx *Record_nameContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -4651,6 +4755,10 @@ func (v *BaseOscarParserVisitor) VisitGrant_object_name(ctx *Grant_object_nameCo
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseOscarParserVisitor) VisitGrant_object_type(ctx *Grant_object_typeContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseOscarParserVisitor) VisitColumn_list(ctx *Column_listContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -4692,6 +4800,10 @@ func (v *BaseOscarParserVisitor) VisitDatatype(ctx *DatatypeContext) interface{}
 }
 
 func (v *BaseOscarParserVisitor) VisitPrecision_part(ctx *Precision_partContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitOpt_array_bounds(ctx *Opt_array_boundsContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -4776,5 +4888,437 @@ func (v *BaseOscarParserVisitor) VisitString_function_name(ctx *String_function_
 }
 
 func (v *BaseOscarParserVisitor) VisitNumeric_function_name(ctx *Numeric_function_nameContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitBulk_insert(ctx *Bulk_insertContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitHint(ctx *HintContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCsv_option(ctx *Csv_optionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitClean_audit_configuration(ctx *Clean_audit_configurationContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitClean_rollback_segment(ctx *Clean_rollback_segmentContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitClose_cursor(ctx *Close_cursorContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDeallocate_cursor(ctx *Deallocate_cursorContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDeallocate_prepare(ctx *Deallocate_prepareContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitExecute_statement(ctx *Execute_statementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitPrepare_stmt(ctx *Prepare_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitComment_on_oscar(ctx *Comment_on_oscarContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCdc_name(ctx *Cdc_nameContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCreate_cdc(ctx *Create_cdcContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDrop_cdc(ctx *Drop_cdcContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCek_name(ctx *Cek_nameContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCmk_name(ctx *Cmk_nameContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlgorithm(ctx *AlgorithmContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCek_enc_value(ctx *Cek_enc_valueContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCreate_column_encryption_key(ctx *Create_column_encryption_keyContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCek_clause(ctx *Cek_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDrop_column_encryption_key(ctx *Drop_column_encryption_keyContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCreate_column_master_key(ctx *Create_column_master_keyContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCmk_clause(ctx *Cmk_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitKey_store_name(ctx *Key_store_nameContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitKey_path_str(ctx *Key_path_strContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDrop_column_master_key(ctx *Drop_column_master_keyContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitRac_clause(ctx *Rac_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitVotediskpath(ctx *VotediskpathContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitRac_node_info(ctx *Rac_node_infoContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitNodeip(ctx *NodeipContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitNodeid(ctx *NodeidContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitThreadid(ctx *ThreadidContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitLocale_option(ctx *Locale_optionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCtype(ctx *CtypeContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCollate(ctx *CollateContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitSys_user_clause(ctx *Sys_user_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitUsername(ctx *UsernameContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitPassword_auth(ctx *Password_authContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDelete_alog_clause(ctx *Delete_alog_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCtrl_file_clause(ctx *Ctrl_file_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlter_rac_clause(ctx *Alter_rac_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCreate_domain(ctx *Create_domainContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitConstraint_spec(ctx *Constraint_specContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDrop_domain(ctx *Drop_domainContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCreate_external_table(ctx *Create_external_tableContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAccess_parameters(ctx *Access_parametersContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCreate_fulltext_index(ctx *Create_fulltext_indexContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlter_fulltext_index(ctx *Alter_fulltext_indexContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDrop_fulltext_index(ctx *Drop_fulltext_indexContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitOptimize_fulltext_index(ctx *Optimize_fulltext_indexContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitMergeindexname(ctx *MergeindexnameContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCreate_resource_label(ctx *Create_resource_labelContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlter_resource_label(ctx *Alter_resource_labelContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDrop_resource_label(ctx *Drop_resource_labelContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCreate_masking_policy(ctx *Create_masking_policyContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitMasking_clause(ctx *Masking_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitMasking_function(ctx *Masking_functionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitPolicy_filter(ctx *Policy_filterContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitPolicy_filter_on(ctx *Policy_filter_onContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlter_masking_policy(ctx *Alter_masking_policyContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDrop_masking_policy(ctx *Drop_masking_policyContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitPolicy_add_comments(ctx *Policy_add_commentsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitPolicy_modify_masking(ctx *Policy_modify_maskingContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitPolicy_modify_filter(ctx *Policy_modify_filterContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitPolicy_drop_filter(ctx *Policy_drop_filterContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitStaistics_name(ctx *Staistics_nameContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCreate_multiple_statistics(ctx *Create_multiple_statisticsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlter_multiple_statistics(ctx *Alter_multiple_statisticsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitUpdate_multiple_statistics(ctx *Update_multiple_statisticsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDrop_multiple_statistics(ctx *Drop_multiple_statisticsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitSchemaname(ctx *SchemanameContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCreate_schema(ctx *Create_schemaContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlter_schema(ctx *Alter_schemaContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDrop_schema(ctx *Drop_schemaContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCreate_statistics(ctx *Create_statisticsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlter_statistics(ctx *Alter_statisticsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitUpdate_statistics(ctx *Update_statisticsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDrop_statistics(ctx *Drop_statisticsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlter_system(ctx *Alter_systemContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitUndo_clause(ctx *Undo_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitWallet_clause(ctx *Wallet_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCreate_wallet_clause(ctx *Create_wallet_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitOpen_wallet_clause(ctx *Open_wallet_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitClose_wallet_clause(ctx *Close_wallet_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitModify_wallet_clause(ctx *Modify_wallet_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitBackup_wallet_clause(ctx *Backup_wallet_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitAlter_wallet_password_clause(ctx *Alter_wallet_password_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitDrop_savepoint(ctx *Drop_savepointContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitCursor_stmt(ctx *Cursor_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitGet_description_of(ctx *Get_description_ofContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitGet_paraminfo_for(ctx *Get_paraminfo_forContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitGet_rowdescription_for(ctx *Get_rowdescription_forContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitKill_stmt(ctx *Kill_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitRefresh_materialized_view(ctx *Refresh_materialized_viewContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitStart_audit(ctx *Start_auditContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitShutdown_stmt(ctx *Shutdown_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitSet_autocommit(ctx *Set_autocommitContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitReset_stmt(ctx *Reset_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitShow_stmt(ctx *Show_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitReplace_statement(ctx *Replace_statementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitLimitClause(ctx *LimitClauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitLimitOptions(ctx *LimitOptionsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitLimitOption(ctx *LimitOptionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitTop_clause(ctx *Top_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitTypename(ctx *TypenameContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitModify_table_default_attrs(ctx *Modify_table_default_attrsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitSet_subpartition_template(ctx *Set_subpartition_templateContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseOscarParserVisitor) VisitPartition_attributes(ctx *Partition_attributesContext) interface{} {
 	return v.VisitChildren(ctx)
 }

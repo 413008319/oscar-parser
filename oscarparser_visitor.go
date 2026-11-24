@@ -361,6 +361,9 @@ type OscarParserVisitor interface {
 	// Visit a parse tree produced by OscarParser#dml_event_clause.
 	VisitDml_event_clause(ctx *Dml_event_clauseContext) interface{}
 
+	// Visit a parse tree produced by OscarParser#defer_option.
+	VisitDefer_option(ctx *Defer_optionContext) interface{}
+
 	// Visit a parse tree produced by OscarParser#dml_event_element.
 	VisitDml_event_element(ctx *Dml_event_elementContext) interface{}
 
@@ -513,6 +516,9 @@ type OscarParserVisitor interface {
 
 	// Visit a parse tree produced by OscarParser#sequence_start_clause.
 	VisitSequence_start_clause(ctx *Sequence_start_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#sequence_restart_clause.
+	VisitSequence_restart_clause(ctx *Sequence_restart_clauseContext) interface{}
 
 	// Visit a parse tree produced by OscarParser#create_analytic_view.
 	VisitCreate_analytic_view(ctx *Create_analytic_viewContext) interface{}
@@ -1291,6 +1297,12 @@ type OscarParserVisitor interface {
 	// Visit a parse tree produced by OscarParser#inline_constraint.
 	VisitInline_constraint(ctx *Inline_constraintContext) interface{}
 
+	// Visit a parse tree produced by OscarParser#full_encryption.
+	VisitFull_encryption(ctx *Full_encryptionContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#encryption_type.
+	VisitEncryption_type(ctx *Encryption_typeContext) interface{}
+
 	// Visit a parse tree produced by OscarParser#inline_ref_constraint.
 	VisitInline_ref_constraint(ctx *Inline_ref_constraintContext) interface{}
 
@@ -1344,6 +1356,9 @@ type OscarParserVisitor interface {
 
 	// Visit a parse tree produced by OscarParser#permanent_tablespace_clause.
 	VisitPermanent_tablespace_clause(ctx *Permanent_tablespace_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#default_storage_option.
+	VisitDefault_storage_option(ctx *Default_storage_optionContext) interface{}
 
 	// Visit a parse tree produced by OscarParser#tablespace_encryption_spec.
 	VisitTablespace_encryption_spec(ctx *Tablespace_encryption_specContext) interface{}
@@ -1540,6 +1555,9 @@ type OscarParserVisitor interface {
 	// Visit a parse tree produced by OscarParser#drop_materialized_view.
 	VisitDrop_materialized_view(ctx *Drop_materialized_viewContext) interface{}
 
+	// Visit a parse tree produced by OscarParser#drop_materialized_view_log.
+	VisitDrop_materialized_view_log(ctx *Drop_materialized_view_logContext) interface{}
+
 	// Visit a parse tree produced by OscarParser#create_context.
 	VisitCreate_context(ctx *Create_contextContext) interface{}
 
@@ -1641,6 +1659,18 @@ type OscarParserVisitor interface {
 
 	// Visit a parse tree produced by OscarParser#table_properties.
 	VisitTable_properties(ctx *Table_propertiesContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#lock_option.
+	VisitLock_option(ctx *Lock_optionContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#opt_start.
+	VisitOpt_start(ctx *Opt_startContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#on_commit_clause.
+	VisitOn_commit_clause(ctx *On_commit_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#auto_increment_set.
+	VisitAuto_increment_set(ctx *Auto_increment_setContext) interface{}
 
 	// Visit a parse tree produced by OscarParser#read_only_clause.
 	VisitRead_only_clause(ctx *Read_only_clauseContext) interface{}
@@ -2260,20 +2290,41 @@ type OscarParserVisitor interface {
 	// Visit a parse tree produced by OscarParser#merge_table_partition.
 	VisitMerge_table_partition(ctx *Merge_table_partitionContext) interface{}
 
+	// Visit a parse tree produced by OscarParser#merge_table_subpartition.
+	VisitMerge_table_subpartition(ctx *Merge_table_subpartitionContext) interface{}
+
 	// Visit a parse tree produced by OscarParser#modify_table_partition.
 	VisitModify_table_partition(ctx *Modify_table_partitionContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#move_table_partition.
+	VisitMove_table_partition(ctx *Move_table_partitionContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#modify_table_subpartition.
+	VisitModify_table_subpartition(ctx *Modify_table_subpartitionContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#move_table_subpartition.
+	VisitMove_table_subpartition(ctx *Move_table_subpartitionContext) interface{}
 
 	// Visit a parse tree produced by OscarParser#split_table_partition.
 	VisitSplit_table_partition(ctx *Split_table_partitionContext) interface{}
 
+	// Visit a parse tree produced by OscarParser#split_table_subpartition.
+	VisitSplit_table_subpartition(ctx *Split_table_subpartitionContext) interface{}
+
 	// Visit a parse tree produced by OscarParser#truncate_table_partition.
 	VisitTruncate_table_partition(ctx *Truncate_table_partitionContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#rename_table_partition.
+	VisitRename_table_partition(ctx *Rename_table_partitionContext) interface{}
 
 	// Visit a parse tree produced by OscarParser#exchange_table_partition.
 	VisitExchange_table_partition(ctx *Exchange_table_partitionContext) interface{}
 
 	// Visit a parse tree produced by OscarParser#coalesce_table_partition.
 	VisitCoalesce_table_partition(ctx *Coalesce_table_partitionContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#coalesce_table_subpartition.
+	VisitCoalesce_table_subpartition(ctx *Coalesce_table_subpartitionContext) interface{}
 
 	// Visit a parse tree produced by OscarParser#alter_interval_partition.
 	VisitAlter_interval_partition(ctx *Alter_interval_partitionContext) interface{}
@@ -2349,6 +2400,18 @@ type OscarParserVisitor interface {
 
 	// Visit a parse tree produced by OscarParser#column_clauses.
 	VisitColumn_clauses(ctx *Column_clausesContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#alter_column_default.
+	VisitAlter_column_default(ctx *Alter_column_defaultContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#alter_column_nullable.
+	VisitAlter_column_nullable(ctx *Alter_column_nullableContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#alter_column_type.
+	VisitAlter_column_type(ctx *Alter_column_typeContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#alter_table_rebuild.
+	VisitAlter_table_rebuild(ctx *Alter_table_rebuildContext) interface{}
 
 	// Visit a parse tree produced by OscarParser#modify_collection_retrieval.
 	VisitModify_collection_retrieval(ctx *Modify_collection_retrievalContext) interface{}
@@ -2533,8 +2596,14 @@ type OscarParserVisitor interface {
 	// Visit a parse tree produced by OscarParser#references_clause.
 	VisitReferences_clause(ctx *References_clauseContext) interface{}
 
+	// Visit a parse tree produced by OscarParser#key_actions.
+	VisitKey_actions(ctx *Key_actionsContext) interface{}
+
 	// Visit a parse tree produced by OscarParser#on_delete_clause.
 	VisitOn_delete_clause(ctx *On_delete_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#on_update_clause.
+	VisitOn_update_clause(ctx *On_update_clauseContext) interface{}
 
 	// Visit a parse tree produced by OscarParser#unique_key_clause.
 	VisitUnique_key_clause(ctx *Unique_key_clauseContext) interface{}
@@ -2737,6 +2806,9 @@ type OscarParserVisitor interface {
 	// Visit a parse tree produced by OscarParser#fetch_statement.
 	VisitFetch_statement(ctx *Fetch_statementContext) interface{}
 
+	// Visit a parse tree produced by OscarParser#move_statement.
+	VisitMove_statement(ctx *Move_statementContext) interface{}
+
 	// Visit a parse tree produced by OscarParser#variable_or_collection.
 	VisitVariable_or_collection(ctx *Variable_or_collectionContext) interface{}
 
@@ -2748,6 +2820,12 @@ type OscarParserVisitor interface {
 
 	// Visit a parse tree produced by OscarParser#set_transaction_command.
 	VisitSet_transaction_command(ctx *Set_transaction_commandContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#start_transaction_command.
+	VisitStart_transaction_command(ctx *Start_transaction_commandContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#end_transaction_command.
+	VisitEnd_transaction_command(ctx *End_transaction_commandContext) interface{}
 
 	// Visit a parse tree produced by OscarParser#set_constraint_command.
 	VisitSet_constraint_command(ctx *Set_constraint_commandContext) interface{}
@@ -3325,9 +3403,6 @@ type OscarParserVisitor interface {
 	// Visit a parse tree produced by OscarParser#xmlserialize_param_ident_part.
 	VisitXmlserialize_param_ident_part(ctx *Xmlserialize_param_ident_partContext) interface{}
 
-	// Visit a parse tree produced by OscarParser#sql_plus_command_no_semicolon.
-	VisitSql_plus_command_no_semicolon(ctx *Sql_plus_command_no_semicolonContext) interface{}
-
 	// Visit a parse tree produced by OscarParser#sql_plus_command.
 	VisitSql_plus_command(ctx *Sql_plus_commandContext) interface{}
 
@@ -3448,6 +3523,9 @@ type OscarParserVisitor interface {
 	// Visit a parse tree produced by OscarParser#cursor_name.
 	VisitCursor_name(ctx *Cursor_nameContext) interface{}
 
+	// Visit a parse tree produced by OscarParser#plan_name.
+	VisitPlan_name(ctx *Plan_nameContext) interface{}
+
 	// Visit a parse tree produced by OscarParser#record_name.
 	VisitRecord_name(ctx *Record_nameContext) interface{}
 
@@ -3490,6 +3568,9 @@ type OscarParserVisitor interface {
 	// Visit a parse tree produced by OscarParser#grant_object_name.
 	VisitGrant_object_name(ctx *Grant_object_nameContext) interface{}
 
+	// Visit a parse tree produced by OscarParser#grant_object_type.
+	VisitGrant_object_type(ctx *Grant_object_typeContext) interface{}
+
 	// Visit a parse tree produced by OscarParser#column_list.
 	VisitColumn_list(ctx *Column_listContext) interface{}
 
@@ -3522,6 +3603,9 @@ type OscarParserVisitor interface {
 
 	// Visit a parse tree produced by OscarParser#precision_part.
 	VisitPrecision_part(ctx *Precision_partContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#opt_array_bounds.
+	VisitOpt_array_bounds(ctx *Opt_array_boundsContext) interface{}
 
 	// Visit a parse tree produced by OscarParser#native_datatype_element.
 	VisitNative_datatype_element(ctx *Native_datatype_elementContext) interface{}
@@ -3585,4 +3669,328 @@ type OscarParserVisitor interface {
 
 	// Visit a parse tree produced by OscarParser#numeric_function_name.
 	VisitNumeric_function_name(ctx *Numeric_function_nameContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#bulk_insert.
+	VisitBulk_insert(ctx *Bulk_insertContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#hint.
+	VisitHint(ctx *HintContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#csv_option.
+	VisitCsv_option(ctx *Csv_optionContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#clean_audit_configuration.
+	VisitClean_audit_configuration(ctx *Clean_audit_configurationContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#clean_rollback_segment.
+	VisitClean_rollback_segment(ctx *Clean_rollback_segmentContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#close_cursor.
+	VisitClose_cursor(ctx *Close_cursorContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#deallocate_cursor.
+	VisitDeallocate_cursor(ctx *Deallocate_cursorContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#deallocate_prepare.
+	VisitDeallocate_prepare(ctx *Deallocate_prepareContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#execute_statement.
+	VisitExecute_statement(ctx *Execute_statementContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#prepare_stmt.
+	VisitPrepare_stmt(ctx *Prepare_stmtContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#comment_on_oscar.
+	VisitComment_on_oscar(ctx *Comment_on_oscarContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#cdc_name.
+	VisitCdc_name(ctx *Cdc_nameContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#create_cdc.
+	VisitCreate_cdc(ctx *Create_cdcContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#drop_cdc.
+	VisitDrop_cdc(ctx *Drop_cdcContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#cek_name.
+	VisitCek_name(ctx *Cek_nameContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#cmk_name.
+	VisitCmk_name(ctx *Cmk_nameContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#algorithm.
+	VisitAlgorithm(ctx *AlgorithmContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#cek_enc_value.
+	VisitCek_enc_value(ctx *Cek_enc_valueContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#create_column_encryption_key.
+	VisitCreate_column_encryption_key(ctx *Create_column_encryption_keyContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#cek_clause.
+	VisitCek_clause(ctx *Cek_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#drop_column_encryption_key.
+	VisitDrop_column_encryption_key(ctx *Drop_column_encryption_keyContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#create_column_master_key.
+	VisitCreate_column_master_key(ctx *Create_column_master_keyContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#cmk_clause.
+	VisitCmk_clause(ctx *Cmk_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#key_store_name.
+	VisitKey_store_name(ctx *Key_store_nameContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#key_path_str.
+	VisitKey_path_str(ctx *Key_path_strContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#drop_column_master_key.
+	VisitDrop_column_master_key(ctx *Drop_column_master_keyContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#rac_clause.
+	VisitRac_clause(ctx *Rac_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#votediskpath.
+	VisitVotediskpath(ctx *VotediskpathContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#rac_node_info.
+	VisitRac_node_info(ctx *Rac_node_infoContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#nodeip.
+	VisitNodeip(ctx *NodeipContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#nodeid.
+	VisitNodeid(ctx *NodeidContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#threadid.
+	VisitThreadid(ctx *ThreadidContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#locale_option.
+	VisitLocale_option(ctx *Locale_optionContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#ctype.
+	VisitCtype(ctx *CtypeContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#collate.
+	VisitCollate(ctx *CollateContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#sys_user_clause.
+	VisitSys_user_clause(ctx *Sys_user_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#username.
+	VisitUsername(ctx *UsernameContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#password_auth.
+	VisitPassword_auth(ctx *Password_authContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#delete_alog_clause.
+	VisitDelete_alog_clause(ctx *Delete_alog_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#ctrl_file_clause.
+	VisitCtrl_file_clause(ctx *Ctrl_file_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#alter_rac_clause.
+	VisitAlter_rac_clause(ctx *Alter_rac_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#create_domain.
+	VisitCreate_domain(ctx *Create_domainContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#constraint_spec.
+	VisitConstraint_spec(ctx *Constraint_specContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#drop_domain.
+	VisitDrop_domain(ctx *Drop_domainContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#create_external_table.
+	VisitCreate_external_table(ctx *Create_external_tableContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#access_parameters.
+	VisitAccess_parameters(ctx *Access_parametersContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#create_fulltext_index.
+	VisitCreate_fulltext_index(ctx *Create_fulltext_indexContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#alter_fulltext_index.
+	VisitAlter_fulltext_index(ctx *Alter_fulltext_indexContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#drop_fulltext_index.
+	VisitDrop_fulltext_index(ctx *Drop_fulltext_indexContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#optimize_fulltext_index.
+	VisitOptimize_fulltext_index(ctx *Optimize_fulltext_indexContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#mergeindexname.
+	VisitMergeindexname(ctx *MergeindexnameContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#create_resource_label.
+	VisitCreate_resource_label(ctx *Create_resource_labelContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#alter_resource_label.
+	VisitAlter_resource_label(ctx *Alter_resource_labelContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#drop_resource_label.
+	VisitDrop_resource_label(ctx *Drop_resource_labelContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#create_masking_policy.
+	VisitCreate_masking_policy(ctx *Create_masking_policyContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#masking_clause.
+	VisitMasking_clause(ctx *Masking_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#masking_function.
+	VisitMasking_function(ctx *Masking_functionContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#policy_filter.
+	VisitPolicy_filter(ctx *Policy_filterContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#policy_filter_on.
+	VisitPolicy_filter_on(ctx *Policy_filter_onContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#alter_masking_policy.
+	VisitAlter_masking_policy(ctx *Alter_masking_policyContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#drop_masking_policy.
+	VisitDrop_masking_policy(ctx *Drop_masking_policyContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#policy_add_comments.
+	VisitPolicy_add_comments(ctx *Policy_add_commentsContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#policy_modify_masking.
+	VisitPolicy_modify_masking(ctx *Policy_modify_maskingContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#policy_modify_filter.
+	VisitPolicy_modify_filter(ctx *Policy_modify_filterContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#policy_drop_filter.
+	VisitPolicy_drop_filter(ctx *Policy_drop_filterContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#staistics_name.
+	VisitStaistics_name(ctx *Staistics_nameContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#create_multiple_statistics.
+	VisitCreate_multiple_statistics(ctx *Create_multiple_statisticsContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#alter_multiple_statistics.
+	VisitAlter_multiple_statistics(ctx *Alter_multiple_statisticsContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#update_multiple_statistics.
+	VisitUpdate_multiple_statistics(ctx *Update_multiple_statisticsContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#drop_multiple_statistics.
+	VisitDrop_multiple_statistics(ctx *Drop_multiple_statisticsContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#schemaname.
+	VisitSchemaname(ctx *SchemanameContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#create_schema.
+	VisitCreate_schema(ctx *Create_schemaContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#alter_schema.
+	VisitAlter_schema(ctx *Alter_schemaContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#drop_schema.
+	VisitDrop_schema(ctx *Drop_schemaContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#create_statistics.
+	VisitCreate_statistics(ctx *Create_statisticsContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#alter_statistics.
+	VisitAlter_statistics(ctx *Alter_statisticsContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#update_statistics.
+	VisitUpdate_statistics(ctx *Update_statisticsContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#drop_statistics.
+	VisitDrop_statistics(ctx *Drop_statisticsContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#alter_system.
+	VisitAlter_system(ctx *Alter_systemContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#undo_clause.
+	VisitUndo_clause(ctx *Undo_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#wallet_clause.
+	VisitWallet_clause(ctx *Wallet_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#create_wallet_clause.
+	VisitCreate_wallet_clause(ctx *Create_wallet_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#open_wallet_clause.
+	VisitOpen_wallet_clause(ctx *Open_wallet_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#close_wallet_clause.
+	VisitClose_wallet_clause(ctx *Close_wallet_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#modify_wallet_clause.
+	VisitModify_wallet_clause(ctx *Modify_wallet_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#backup_wallet_clause.
+	VisitBackup_wallet_clause(ctx *Backup_wallet_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#alter_wallet_password_clause.
+	VisitAlter_wallet_password_clause(ctx *Alter_wallet_password_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#drop_savepoint.
+	VisitDrop_savepoint(ctx *Drop_savepointContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#cursor_stmt.
+	VisitCursor_stmt(ctx *Cursor_stmtContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#get_description_of.
+	VisitGet_description_of(ctx *Get_description_ofContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#get_paraminfo_for.
+	VisitGet_paraminfo_for(ctx *Get_paraminfo_forContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#get_rowdescription_for.
+	VisitGet_rowdescription_for(ctx *Get_rowdescription_forContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#kill_stmt.
+	VisitKill_stmt(ctx *Kill_stmtContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#refresh_materialized_view.
+	VisitRefresh_materialized_view(ctx *Refresh_materialized_viewContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#start_audit.
+	VisitStart_audit(ctx *Start_auditContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#shutdown_stmt.
+	VisitShutdown_stmt(ctx *Shutdown_stmtContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#set_autocommit.
+	VisitSet_autocommit(ctx *Set_autocommitContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#reset_stmt.
+	VisitReset_stmt(ctx *Reset_stmtContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#show_stmt.
+	VisitShow_stmt(ctx *Show_stmtContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#replace_statement.
+	VisitReplace_statement(ctx *Replace_statementContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#limitClause.
+	VisitLimitClause(ctx *LimitClauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#limitOptions.
+	VisitLimitOptions(ctx *LimitOptionsContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#limitOption.
+	VisitLimitOption(ctx *LimitOptionContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#top_clause.
+	VisitTop_clause(ctx *Top_clauseContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#typename.
+	VisitTypename(ctx *TypenameContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#modify_table_default_attrs.
+	VisitModify_table_default_attrs(ctx *Modify_table_default_attrsContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#set_subpartition_template.
+	VisitSet_subpartition_template(ctx *Set_subpartition_templateContext) interface{}
+
+	// Visit a parse tree produced by OscarParser#partition_attributes.
+	VisitPartition_attributes(ctx *Partition_attributesContext) interface{}
 }

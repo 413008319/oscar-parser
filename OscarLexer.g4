@@ -1321,6 +1321,7 @@ PARALLEL_INDEX                 : 'PARALLEL_INDEX';
 PARALLEL                       : 'PARALLEL';
 PARAMETERFILE                  : 'PARAMETERFILE';
 PARAMETERS                     : 'PARAMETERS';
+PARAMETER                      : 'PARAMETER';
 PARAM                          : 'PARAM';
 PARENT                         : 'PARENT';
 PARENT_LEVEL_NAME              : 'PARENT_LEVEL_NAME';
@@ -2498,6 +2499,10 @@ NOTICE     : 'NOTICE';
 STORED     : 'STORED';
 ESCALATION     : 'ESCALATION';
 TUPLE     : 'TUPLE';
+BINLOG     : 'BINLOG';
+HOLD     : 'HOLD';
+PARAMINFO     : 'PARAMINFO';
+ROWDESCRIPTION     : 'ROWDESCRIPTION';
 
 TYPECAST
    : '::'
@@ -2607,6 +2612,7 @@ GREATER_THAN_OP           : '>';
 LESS_THAN_OP              : '<';
 COLON                     : ':';
 SEMICOLON                 : ';';
+QUESTION                  : '?';
 
 BAR       : '|';
 EQUALS_OP : '=';

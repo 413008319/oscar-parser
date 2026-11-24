@@ -361,6 +361,9 @@ type OscarParserListener interface {
 	// EnterDml_event_clause is called when entering the dml_event_clause production.
 	EnterDml_event_clause(c *Dml_event_clauseContext)
 
+	// EnterDefer_option is called when entering the defer_option production.
+	EnterDefer_option(c *Defer_optionContext)
+
 	// EnterDml_event_element is called when entering the dml_event_element production.
 	EnterDml_event_element(c *Dml_event_elementContext)
 
@@ -513,6 +516,9 @@ type OscarParserListener interface {
 
 	// EnterSequence_start_clause is called when entering the sequence_start_clause production.
 	EnterSequence_start_clause(c *Sequence_start_clauseContext)
+
+	// EnterSequence_restart_clause is called when entering the sequence_restart_clause production.
+	EnterSequence_restart_clause(c *Sequence_restart_clauseContext)
 
 	// EnterCreate_analytic_view is called when entering the create_analytic_view production.
 	EnterCreate_analytic_view(c *Create_analytic_viewContext)
@@ -1291,6 +1297,12 @@ type OscarParserListener interface {
 	// EnterInline_constraint is called when entering the inline_constraint production.
 	EnterInline_constraint(c *Inline_constraintContext)
 
+	// EnterFull_encryption is called when entering the full_encryption production.
+	EnterFull_encryption(c *Full_encryptionContext)
+
+	// EnterEncryption_type is called when entering the encryption_type production.
+	EnterEncryption_type(c *Encryption_typeContext)
+
 	// EnterInline_ref_constraint is called when entering the inline_ref_constraint production.
 	EnterInline_ref_constraint(c *Inline_ref_constraintContext)
 
@@ -1344,6 +1356,9 @@ type OscarParserListener interface {
 
 	// EnterPermanent_tablespace_clause is called when entering the permanent_tablespace_clause production.
 	EnterPermanent_tablespace_clause(c *Permanent_tablespace_clauseContext)
+
+	// EnterDefault_storage_option is called when entering the default_storage_option production.
+	EnterDefault_storage_option(c *Default_storage_optionContext)
 
 	// EnterTablespace_encryption_spec is called when entering the tablespace_encryption_spec production.
 	EnterTablespace_encryption_spec(c *Tablespace_encryption_specContext)
@@ -1540,6 +1555,9 @@ type OscarParserListener interface {
 	// EnterDrop_materialized_view is called when entering the drop_materialized_view production.
 	EnterDrop_materialized_view(c *Drop_materialized_viewContext)
 
+	// EnterDrop_materialized_view_log is called when entering the drop_materialized_view_log production.
+	EnterDrop_materialized_view_log(c *Drop_materialized_view_logContext)
+
 	// EnterCreate_context is called when entering the create_context production.
 	EnterCreate_context(c *Create_contextContext)
 
@@ -1641,6 +1659,18 @@ type OscarParserListener interface {
 
 	// EnterTable_properties is called when entering the table_properties production.
 	EnterTable_properties(c *Table_propertiesContext)
+
+	// EnterLock_option is called when entering the lock_option production.
+	EnterLock_option(c *Lock_optionContext)
+
+	// EnterOpt_start is called when entering the opt_start production.
+	EnterOpt_start(c *Opt_startContext)
+
+	// EnterOn_commit_clause is called when entering the on_commit_clause production.
+	EnterOn_commit_clause(c *On_commit_clauseContext)
+
+	// EnterAuto_increment_set is called when entering the auto_increment_set production.
+	EnterAuto_increment_set(c *Auto_increment_setContext)
 
 	// EnterRead_only_clause is called when entering the read_only_clause production.
 	EnterRead_only_clause(c *Read_only_clauseContext)
@@ -2260,20 +2290,41 @@ type OscarParserListener interface {
 	// EnterMerge_table_partition is called when entering the merge_table_partition production.
 	EnterMerge_table_partition(c *Merge_table_partitionContext)
 
+	// EnterMerge_table_subpartition is called when entering the merge_table_subpartition production.
+	EnterMerge_table_subpartition(c *Merge_table_subpartitionContext)
+
 	// EnterModify_table_partition is called when entering the modify_table_partition production.
 	EnterModify_table_partition(c *Modify_table_partitionContext)
+
+	// EnterMove_table_partition is called when entering the move_table_partition production.
+	EnterMove_table_partition(c *Move_table_partitionContext)
+
+	// EnterModify_table_subpartition is called when entering the modify_table_subpartition production.
+	EnterModify_table_subpartition(c *Modify_table_subpartitionContext)
+
+	// EnterMove_table_subpartition is called when entering the move_table_subpartition production.
+	EnterMove_table_subpartition(c *Move_table_subpartitionContext)
 
 	// EnterSplit_table_partition is called when entering the split_table_partition production.
 	EnterSplit_table_partition(c *Split_table_partitionContext)
 
+	// EnterSplit_table_subpartition is called when entering the split_table_subpartition production.
+	EnterSplit_table_subpartition(c *Split_table_subpartitionContext)
+
 	// EnterTruncate_table_partition is called when entering the truncate_table_partition production.
 	EnterTruncate_table_partition(c *Truncate_table_partitionContext)
+
+	// EnterRename_table_partition is called when entering the rename_table_partition production.
+	EnterRename_table_partition(c *Rename_table_partitionContext)
 
 	// EnterExchange_table_partition is called when entering the exchange_table_partition production.
 	EnterExchange_table_partition(c *Exchange_table_partitionContext)
 
 	// EnterCoalesce_table_partition is called when entering the coalesce_table_partition production.
 	EnterCoalesce_table_partition(c *Coalesce_table_partitionContext)
+
+	// EnterCoalesce_table_subpartition is called when entering the coalesce_table_subpartition production.
+	EnterCoalesce_table_subpartition(c *Coalesce_table_subpartitionContext)
 
 	// EnterAlter_interval_partition is called when entering the alter_interval_partition production.
 	EnterAlter_interval_partition(c *Alter_interval_partitionContext)
@@ -2349,6 +2400,18 @@ type OscarParserListener interface {
 
 	// EnterColumn_clauses is called when entering the column_clauses production.
 	EnterColumn_clauses(c *Column_clausesContext)
+
+	// EnterAlter_column_default is called when entering the alter_column_default production.
+	EnterAlter_column_default(c *Alter_column_defaultContext)
+
+	// EnterAlter_column_nullable is called when entering the alter_column_nullable production.
+	EnterAlter_column_nullable(c *Alter_column_nullableContext)
+
+	// EnterAlter_column_type is called when entering the alter_column_type production.
+	EnterAlter_column_type(c *Alter_column_typeContext)
+
+	// EnterAlter_table_rebuild is called when entering the alter_table_rebuild production.
+	EnterAlter_table_rebuild(c *Alter_table_rebuildContext)
 
 	// EnterModify_collection_retrieval is called when entering the modify_collection_retrieval production.
 	EnterModify_collection_retrieval(c *Modify_collection_retrievalContext)
@@ -2533,8 +2596,14 @@ type OscarParserListener interface {
 	// EnterReferences_clause is called when entering the references_clause production.
 	EnterReferences_clause(c *References_clauseContext)
 
+	// EnterKey_actions is called when entering the key_actions production.
+	EnterKey_actions(c *Key_actionsContext)
+
 	// EnterOn_delete_clause is called when entering the on_delete_clause production.
 	EnterOn_delete_clause(c *On_delete_clauseContext)
+
+	// EnterOn_update_clause is called when entering the on_update_clause production.
+	EnterOn_update_clause(c *On_update_clauseContext)
 
 	// EnterUnique_key_clause is called when entering the unique_key_clause production.
 	EnterUnique_key_clause(c *Unique_key_clauseContext)
@@ -2737,6 +2806,9 @@ type OscarParserListener interface {
 	// EnterFetch_statement is called when entering the fetch_statement production.
 	EnterFetch_statement(c *Fetch_statementContext)
 
+	// EnterMove_statement is called when entering the move_statement production.
+	EnterMove_statement(c *Move_statementContext)
+
 	// EnterVariable_or_collection is called when entering the variable_or_collection production.
 	EnterVariable_or_collection(c *Variable_or_collectionContext)
 
@@ -2748,6 +2820,12 @@ type OscarParserListener interface {
 
 	// EnterSet_transaction_command is called when entering the set_transaction_command production.
 	EnterSet_transaction_command(c *Set_transaction_commandContext)
+
+	// EnterStart_transaction_command is called when entering the start_transaction_command production.
+	EnterStart_transaction_command(c *Start_transaction_commandContext)
+
+	// EnterEnd_transaction_command is called when entering the end_transaction_command production.
+	EnterEnd_transaction_command(c *End_transaction_commandContext)
 
 	// EnterSet_constraint_command is called when entering the set_constraint_command production.
 	EnterSet_constraint_command(c *Set_constraint_commandContext)
@@ -3325,9 +3403,6 @@ type OscarParserListener interface {
 	// EnterXmlserialize_param_ident_part is called when entering the xmlserialize_param_ident_part production.
 	EnterXmlserialize_param_ident_part(c *Xmlserialize_param_ident_partContext)
 
-	// EnterSql_plus_command_no_semicolon is called when entering the sql_plus_command_no_semicolon production.
-	EnterSql_plus_command_no_semicolon(c *Sql_plus_command_no_semicolonContext)
-
 	// EnterSql_plus_command is called when entering the sql_plus_command production.
 	EnterSql_plus_command(c *Sql_plus_commandContext)
 
@@ -3448,6 +3523,9 @@ type OscarParserListener interface {
 	// EnterCursor_name is called when entering the cursor_name production.
 	EnterCursor_name(c *Cursor_nameContext)
 
+	// EnterPlan_name is called when entering the plan_name production.
+	EnterPlan_name(c *Plan_nameContext)
+
 	// EnterRecord_name is called when entering the record_name production.
 	EnterRecord_name(c *Record_nameContext)
 
@@ -3490,6 +3568,9 @@ type OscarParserListener interface {
 	// EnterGrant_object_name is called when entering the grant_object_name production.
 	EnterGrant_object_name(c *Grant_object_nameContext)
 
+	// EnterGrant_object_type is called when entering the grant_object_type production.
+	EnterGrant_object_type(c *Grant_object_typeContext)
+
 	// EnterColumn_list is called when entering the column_list production.
 	EnterColumn_list(c *Column_listContext)
 
@@ -3522,6 +3603,9 @@ type OscarParserListener interface {
 
 	// EnterPrecision_part is called when entering the precision_part production.
 	EnterPrecision_part(c *Precision_partContext)
+
+	// EnterOpt_array_bounds is called when entering the opt_array_bounds production.
+	EnterOpt_array_bounds(c *Opt_array_boundsContext)
 
 	// EnterNative_datatype_element is called when entering the native_datatype_element production.
 	EnterNative_datatype_element(c *Native_datatype_elementContext)
@@ -3585,6 +3669,330 @@ type OscarParserListener interface {
 
 	// EnterNumeric_function_name is called when entering the numeric_function_name production.
 	EnterNumeric_function_name(c *Numeric_function_nameContext)
+
+	// EnterBulk_insert is called when entering the bulk_insert production.
+	EnterBulk_insert(c *Bulk_insertContext)
+
+	// EnterHint is called when entering the hint production.
+	EnterHint(c *HintContext)
+
+	// EnterCsv_option is called when entering the csv_option production.
+	EnterCsv_option(c *Csv_optionContext)
+
+	// EnterClean_audit_configuration is called when entering the clean_audit_configuration production.
+	EnterClean_audit_configuration(c *Clean_audit_configurationContext)
+
+	// EnterClean_rollback_segment is called when entering the clean_rollback_segment production.
+	EnterClean_rollback_segment(c *Clean_rollback_segmentContext)
+
+	// EnterClose_cursor is called when entering the close_cursor production.
+	EnterClose_cursor(c *Close_cursorContext)
+
+	// EnterDeallocate_cursor is called when entering the deallocate_cursor production.
+	EnterDeallocate_cursor(c *Deallocate_cursorContext)
+
+	// EnterDeallocate_prepare is called when entering the deallocate_prepare production.
+	EnterDeallocate_prepare(c *Deallocate_prepareContext)
+
+	// EnterExecute_statement is called when entering the execute_statement production.
+	EnterExecute_statement(c *Execute_statementContext)
+
+	// EnterPrepare_stmt is called when entering the prepare_stmt production.
+	EnterPrepare_stmt(c *Prepare_stmtContext)
+
+	// EnterComment_on_oscar is called when entering the comment_on_oscar production.
+	EnterComment_on_oscar(c *Comment_on_oscarContext)
+
+	// EnterCdc_name is called when entering the cdc_name production.
+	EnterCdc_name(c *Cdc_nameContext)
+
+	// EnterCreate_cdc is called when entering the create_cdc production.
+	EnterCreate_cdc(c *Create_cdcContext)
+
+	// EnterDrop_cdc is called when entering the drop_cdc production.
+	EnterDrop_cdc(c *Drop_cdcContext)
+
+	// EnterCek_name is called when entering the cek_name production.
+	EnterCek_name(c *Cek_nameContext)
+
+	// EnterCmk_name is called when entering the cmk_name production.
+	EnterCmk_name(c *Cmk_nameContext)
+
+	// EnterAlgorithm is called when entering the algorithm production.
+	EnterAlgorithm(c *AlgorithmContext)
+
+	// EnterCek_enc_value is called when entering the cek_enc_value production.
+	EnterCek_enc_value(c *Cek_enc_valueContext)
+
+	// EnterCreate_column_encryption_key is called when entering the create_column_encryption_key production.
+	EnterCreate_column_encryption_key(c *Create_column_encryption_keyContext)
+
+	// EnterCek_clause is called when entering the cek_clause production.
+	EnterCek_clause(c *Cek_clauseContext)
+
+	// EnterDrop_column_encryption_key is called when entering the drop_column_encryption_key production.
+	EnterDrop_column_encryption_key(c *Drop_column_encryption_keyContext)
+
+	// EnterCreate_column_master_key is called when entering the create_column_master_key production.
+	EnterCreate_column_master_key(c *Create_column_master_keyContext)
+
+	// EnterCmk_clause is called when entering the cmk_clause production.
+	EnterCmk_clause(c *Cmk_clauseContext)
+
+	// EnterKey_store_name is called when entering the key_store_name production.
+	EnterKey_store_name(c *Key_store_nameContext)
+
+	// EnterKey_path_str is called when entering the key_path_str production.
+	EnterKey_path_str(c *Key_path_strContext)
+
+	// EnterDrop_column_master_key is called when entering the drop_column_master_key production.
+	EnterDrop_column_master_key(c *Drop_column_master_keyContext)
+
+	// EnterRac_clause is called when entering the rac_clause production.
+	EnterRac_clause(c *Rac_clauseContext)
+
+	// EnterVotediskpath is called when entering the votediskpath production.
+	EnterVotediskpath(c *VotediskpathContext)
+
+	// EnterRac_node_info is called when entering the rac_node_info production.
+	EnterRac_node_info(c *Rac_node_infoContext)
+
+	// EnterNodeip is called when entering the nodeip production.
+	EnterNodeip(c *NodeipContext)
+
+	// EnterNodeid is called when entering the nodeid production.
+	EnterNodeid(c *NodeidContext)
+
+	// EnterThreadid is called when entering the threadid production.
+	EnterThreadid(c *ThreadidContext)
+
+	// EnterLocale_option is called when entering the locale_option production.
+	EnterLocale_option(c *Locale_optionContext)
+
+	// EnterCtype is called when entering the ctype production.
+	EnterCtype(c *CtypeContext)
+
+	// EnterCollate is called when entering the collate production.
+	EnterCollate(c *CollateContext)
+
+	// EnterSys_user_clause is called when entering the sys_user_clause production.
+	EnterSys_user_clause(c *Sys_user_clauseContext)
+
+	// EnterUsername is called when entering the username production.
+	EnterUsername(c *UsernameContext)
+
+	// EnterPassword_auth is called when entering the password_auth production.
+	EnterPassword_auth(c *Password_authContext)
+
+	// EnterDelete_alog_clause is called when entering the delete_alog_clause production.
+	EnterDelete_alog_clause(c *Delete_alog_clauseContext)
+
+	// EnterCtrl_file_clause is called when entering the ctrl_file_clause production.
+	EnterCtrl_file_clause(c *Ctrl_file_clauseContext)
+
+	// EnterAlter_rac_clause is called when entering the alter_rac_clause production.
+	EnterAlter_rac_clause(c *Alter_rac_clauseContext)
+
+	// EnterCreate_domain is called when entering the create_domain production.
+	EnterCreate_domain(c *Create_domainContext)
+
+	// EnterConstraint_spec is called when entering the constraint_spec production.
+	EnterConstraint_spec(c *Constraint_specContext)
+
+	// EnterDrop_domain is called when entering the drop_domain production.
+	EnterDrop_domain(c *Drop_domainContext)
+
+	// EnterCreate_external_table is called when entering the create_external_table production.
+	EnterCreate_external_table(c *Create_external_tableContext)
+
+	// EnterAccess_parameters is called when entering the access_parameters production.
+	EnterAccess_parameters(c *Access_parametersContext)
+
+	// EnterCreate_fulltext_index is called when entering the create_fulltext_index production.
+	EnterCreate_fulltext_index(c *Create_fulltext_indexContext)
+
+	// EnterAlter_fulltext_index is called when entering the alter_fulltext_index production.
+	EnterAlter_fulltext_index(c *Alter_fulltext_indexContext)
+
+	// EnterDrop_fulltext_index is called when entering the drop_fulltext_index production.
+	EnterDrop_fulltext_index(c *Drop_fulltext_indexContext)
+
+	// EnterOptimize_fulltext_index is called when entering the optimize_fulltext_index production.
+	EnterOptimize_fulltext_index(c *Optimize_fulltext_indexContext)
+
+	// EnterMergeindexname is called when entering the mergeindexname production.
+	EnterMergeindexname(c *MergeindexnameContext)
+
+	// EnterCreate_resource_label is called when entering the create_resource_label production.
+	EnterCreate_resource_label(c *Create_resource_labelContext)
+
+	// EnterAlter_resource_label is called when entering the alter_resource_label production.
+	EnterAlter_resource_label(c *Alter_resource_labelContext)
+
+	// EnterDrop_resource_label is called when entering the drop_resource_label production.
+	EnterDrop_resource_label(c *Drop_resource_labelContext)
+
+	// EnterCreate_masking_policy is called when entering the create_masking_policy production.
+	EnterCreate_masking_policy(c *Create_masking_policyContext)
+
+	// EnterMasking_clause is called when entering the masking_clause production.
+	EnterMasking_clause(c *Masking_clauseContext)
+
+	// EnterMasking_function is called when entering the masking_function production.
+	EnterMasking_function(c *Masking_functionContext)
+
+	// EnterPolicy_filter is called when entering the policy_filter production.
+	EnterPolicy_filter(c *Policy_filterContext)
+
+	// EnterPolicy_filter_on is called when entering the policy_filter_on production.
+	EnterPolicy_filter_on(c *Policy_filter_onContext)
+
+	// EnterAlter_masking_policy is called when entering the alter_masking_policy production.
+	EnterAlter_masking_policy(c *Alter_masking_policyContext)
+
+	// EnterDrop_masking_policy is called when entering the drop_masking_policy production.
+	EnterDrop_masking_policy(c *Drop_masking_policyContext)
+
+	// EnterPolicy_add_comments is called when entering the policy_add_comments production.
+	EnterPolicy_add_comments(c *Policy_add_commentsContext)
+
+	// EnterPolicy_modify_masking is called when entering the policy_modify_masking production.
+	EnterPolicy_modify_masking(c *Policy_modify_maskingContext)
+
+	// EnterPolicy_modify_filter is called when entering the policy_modify_filter production.
+	EnterPolicy_modify_filter(c *Policy_modify_filterContext)
+
+	// EnterPolicy_drop_filter is called when entering the policy_drop_filter production.
+	EnterPolicy_drop_filter(c *Policy_drop_filterContext)
+
+	// EnterStaistics_name is called when entering the staistics_name production.
+	EnterStaistics_name(c *Staistics_nameContext)
+
+	// EnterCreate_multiple_statistics is called when entering the create_multiple_statistics production.
+	EnterCreate_multiple_statistics(c *Create_multiple_statisticsContext)
+
+	// EnterAlter_multiple_statistics is called when entering the alter_multiple_statistics production.
+	EnterAlter_multiple_statistics(c *Alter_multiple_statisticsContext)
+
+	// EnterUpdate_multiple_statistics is called when entering the update_multiple_statistics production.
+	EnterUpdate_multiple_statistics(c *Update_multiple_statisticsContext)
+
+	// EnterDrop_multiple_statistics is called when entering the drop_multiple_statistics production.
+	EnterDrop_multiple_statistics(c *Drop_multiple_statisticsContext)
+
+	// EnterSchemaname is called when entering the schemaname production.
+	EnterSchemaname(c *SchemanameContext)
+
+	// EnterCreate_schema is called when entering the create_schema production.
+	EnterCreate_schema(c *Create_schemaContext)
+
+	// EnterAlter_schema is called when entering the alter_schema production.
+	EnterAlter_schema(c *Alter_schemaContext)
+
+	// EnterDrop_schema is called when entering the drop_schema production.
+	EnterDrop_schema(c *Drop_schemaContext)
+
+	// EnterCreate_statistics is called when entering the create_statistics production.
+	EnterCreate_statistics(c *Create_statisticsContext)
+
+	// EnterAlter_statistics is called when entering the alter_statistics production.
+	EnterAlter_statistics(c *Alter_statisticsContext)
+
+	// EnterUpdate_statistics is called when entering the update_statistics production.
+	EnterUpdate_statistics(c *Update_statisticsContext)
+
+	// EnterDrop_statistics is called when entering the drop_statistics production.
+	EnterDrop_statistics(c *Drop_statisticsContext)
+
+	// EnterAlter_system is called when entering the alter_system production.
+	EnterAlter_system(c *Alter_systemContext)
+
+	// EnterUndo_clause is called when entering the undo_clause production.
+	EnterUndo_clause(c *Undo_clauseContext)
+
+	// EnterWallet_clause is called when entering the wallet_clause production.
+	EnterWallet_clause(c *Wallet_clauseContext)
+
+	// EnterCreate_wallet_clause is called when entering the create_wallet_clause production.
+	EnterCreate_wallet_clause(c *Create_wallet_clauseContext)
+
+	// EnterOpen_wallet_clause is called when entering the open_wallet_clause production.
+	EnterOpen_wallet_clause(c *Open_wallet_clauseContext)
+
+	// EnterClose_wallet_clause is called when entering the close_wallet_clause production.
+	EnterClose_wallet_clause(c *Close_wallet_clauseContext)
+
+	// EnterModify_wallet_clause is called when entering the modify_wallet_clause production.
+	EnterModify_wallet_clause(c *Modify_wallet_clauseContext)
+
+	// EnterBackup_wallet_clause is called when entering the backup_wallet_clause production.
+	EnterBackup_wallet_clause(c *Backup_wallet_clauseContext)
+
+	// EnterAlter_wallet_password_clause is called when entering the alter_wallet_password_clause production.
+	EnterAlter_wallet_password_clause(c *Alter_wallet_password_clauseContext)
+
+	// EnterDrop_savepoint is called when entering the drop_savepoint production.
+	EnterDrop_savepoint(c *Drop_savepointContext)
+
+	// EnterCursor_stmt is called when entering the cursor_stmt production.
+	EnterCursor_stmt(c *Cursor_stmtContext)
+
+	// EnterGet_description_of is called when entering the get_description_of production.
+	EnterGet_description_of(c *Get_description_ofContext)
+
+	// EnterGet_paraminfo_for is called when entering the get_paraminfo_for production.
+	EnterGet_paraminfo_for(c *Get_paraminfo_forContext)
+
+	// EnterGet_rowdescription_for is called when entering the get_rowdescription_for production.
+	EnterGet_rowdescription_for(c *Get_rowdescription_forContext)
+
+	// EnterKill_stmt is called when entering the kill_stmt production.
+	EnterKill_stmt(c *Kill_stmtContext)
+
+	// EnterRefresh_materialized_view is called when entering the refresh_materialized_view production.
+	EnterRefresh_materialized_view(c *Refresh_materialized_viewContext)
+
+	// EnterStart_audit is called when entering the start_audit production.
+	EnterStart_audit(c *Start_auditContext)
+
+	// EnterShutdown_stmt is called when entering the shutdown_stmt production.
+	EnterShutdown_stmt(c *Shutdown_stmtContext)
+
+	// EnterSet_autocommit is called when entering the set_autocommit production.
+	EnterSet_autocommit(c *Set_autocommitContext)
+
+	// EnterReset_stmt is called when entering the reset_stmt production.
+	EnterReset_stmt(c *Reset_stmtContext)
+
+	// EnterShow_stmt is called when entering the show_stmt production.
+	EnterShow_stmt(c *Show_stmtContext)
+
+	// EnterReplace_statement is called when entering the replace_statement production.
+	EnterReplace_statement(c *Replace_statementContext)
+
+	// EnterLimitClause is called when entering the limitClause production.
+	EnterLimitClause(c *LimitClauseContext)
+
+	// EnterLimitOptions is called when entering the limitOptions production.
+	EnterLimitOptions(c *LimitOptionsContext)
+
+	// EnterLimitOption is called when entering the limitOption production.
+	EnterLimitOption(c *LimitOptionContext)
+
+	// EnterTop_clause is called when entering the top_clause production.
+	EnterTop_clause(c *Top_clauseContext)
+
+	// EnterTypename is called when entering the typename production.
+	EnterTypename(c *TypenameContext)
+
+	// EnterModify_table_default_attrs is called when entering the modify_table_default_attrs production.
+	EnterModify_table_default_attrs(c *Modify_table_default_attrsContext)
+
+	// EnterSet_subpartition_template is called when entering the set_subpartition_template production.
+	EnterSet_subpartition_template(c *Set_subpartition_templateContext)
+
+	// EnterPartition_attributes is called when entering the partition_attributes production.
+	EnterPartition_attributes(c *Partition_attributesContext)
 
 	// ExitSql_script is called when exiting the sql_script production.
 	ExitSql_script(c *Sql_scriptContext)
@@ -3940,6 +4348,9 @@ type OscarParserListener interface {
 	// ExitDml_event_clause is called when exiting the dml_event_clause production.
 	ExitDml_event_clause(c *Dml_event_clauseContext)
 
+	// ExitDefer_option is called when exiting the defer_option production.
+	ExitDefer_option(c *Defer_optionContext)
+
 	// ExitDml_event_element is called when exiting the dml_event_element production.
 	ExitDml_event_element(c *Dml_event_elementContext)
 
@@ -4092,6 +4503,9 @@ type OscarParserListener interface {
 
 	// ExitSequence_start_clause is called when exiting the sequence_start_clause production.
 	ExitSequence_start_clause(c *Sequence_start_clauseContext)
+
+	// ExitSequence_restart_clause is called when exiting the sequence_restart_clause production.
+	ExitSequence_restart_clause(c *Sequence_restart_clauseContext)
 
 	// ExitCreate_analytic_view is called when exiting the create_analytic_view production.
 	ExitCreate_analytic_view(c *Create_analytic_viewContext)
@@ -4870,6 +5284,12 @@ type OscarParserListener interface {
 	// ExitInline_constraint is called when exiting the inline_constraint production.
 	ExitInline_constraint(c *Inline_constraintContext)
 
+	// ExitFull_encryption is called when exiting the full_encryption production.
+	ExitFull_encryption(c *Full_encryptionContext)
+
+	// ExitEncryption_type is called when exiting the encryption_type production.
+	ExitEncryption_type(c *Encryption_typeContext)
+
 	// ExitInline_ref_constraint is called when exiting the inline_ref_constraint production.
 	ExitInline_ref_constraint(c *Inline_ref_constraintContext)
 
@@ -4923,6 +5343,9 @@ type OscarParserListener interface {
 
 	// ExitPermanent_tablespace_clause is called when exiting the permanent_tablespace_clause production.
 	ExitPermanent_tablespace_clause(c *Permanent_tablespace_clauseContext)
+
+	// ExitDefault_storage_option is called when exiting the default_storage_option production.
+	ExitDefault_storage_option(c *Default_storage_optionContext)
 
 	// ExitTablespace_encryption_spec is called when exiting the tablespace_encryption_spec production.
 	ExitTablespace_encryption_spec(c *Tablespace_encryption_specContext)
@@ -5119,6 +5542,9 @@ type OscarParserListener interface {
 	// ExitDrop_materialized_view is called when exiting the drop_materialized_view production.
 	ExitDrop_materialized_view(c *Drop_materialized_viewContext)
 
+	// ExitDrop_materialized_view_log is called when exiting the drop_materialized_view_log production.
+	ExitDrop_materialized_view_log(c *Drop_materialized_view_logContext)
+
 	// ExitCreate_context is called when exiting the create_context production.
 	ExitCreate_context(c *Create_contextContext)
 
@@ -5220,6 +5646,18 @@ type OscarParserListener interface {
 
 	// ExitTable_properties is called when exiting the table_properties production.
 	ExitTable_properties(c *Table_propertiesContext)
+
+	// ExitLock_option is called when exiting the lock_option production.
+	ExitLock_option(c *Lock_optionContext)
+
+	// ExitOpt_start is called when exiting the opt_start production.
+	ExitOpt_start(c *Opt_startContext)
+
+	// ExitOn_commit_clause is called when exiting the on_commit_clause production.
+	ExitOn_commit_clause(c *On_commit_clauseContext)
+
+	// ExitAuto_increment_set is called when exiting the auto_increment_set production.
+	ExitAuto_increment_set(c *Auto_increment_setContext)
 
 	// ExitRead_only_clause is called when exiting the read_only_clause production.
 	ExitRead_only_clause(c *Read_only_clauseContext)
@@ -5839,20 +6277,41 @@ type OscarParserListener interface {
 	// ExitMerge_table_partition is called when exiting the merge_table_partition production.
 	ExitMerge_table_partition(c *Merge_table_partitionContext)
 
+	// ExitMerge_table_subpartition is called when exiting the merge_table_subpartition production.
+	ExitMerge_table_subpartition(c *Merge_table_subpartitionContext)
+
 	// ExitModify_table_partition is called when exiting the modify_table_partition production.
 	ExitModify_table_partition(c *Modify_table_partitionContext)
+
+	// ExitMove_table_partition is called when exiting the move_table_partition production.
+	ExitMove_table_partition(c *Move_table_partitionContext)
+
+	// ExitModify_table_subpartition is called when exiting the modify_table_subpartition production.
+	ExitModify_table_subpartition(c *Modify_table_subpartitionContext)
+
+	// ExitMove_table_subpartition is called when exiting the move_table_subpartition production.
+	ExitMove_table_subpartition(c *Move_table_subpartitionContext)
 
 	// ExitSplit_table_partition is called when exiting the split_table_partition production.
 	ExitSplit_table_partition(c *Split_table_partitionContext)
 
+	// ExitSplit_table_subpartition is called when exiting the split_table_subpartition production.
+	ExitSplit_table_subpartition(c *Split_table_subpartitionContext)
+
 	// ExitTruncate_table_partition is called when exiting the truncate_table_partition production.
 	ExitTruncate_table_partition(c *Truncate_table_partitionContext)
+
+	// ExitRename_table_partition is called when exiting the rename_table_partition production.
+	ExitRename_table_partition(c *Rename_table_partitionContext)
 
 	// ExitExchange_table_partition is called when exiting the exchange_table_partition production.
 	ExitExchange_table_partition(c *Exchange_table_partitionContext)
 
 	// ExitCoalesce_table_partition is called when exiting the coalesce_table_partition production.
 	ExitCoalesce_table_partition(c *Coalesce_table_partitionContext)
+
+	// ExitCoalesce_table_subpartition is called when exiting the coalesce_table_subpartition production.
+	ExitCoalesce_table_subpartition(c *Coalesce_table_subpartitionContext)
 
 	// ExitAlter_interval_partition is called when exiting the alter_interval_partition production.
 	ExitAlter_interval_partition(c *Alter_interval_partitionContext)
@@ -5928,6 +6387,18 @@ type OscarParserListener interface {
 
 	// ExitColumn_clauses is called when exiting the column_clauses production.
 	ExitColumn_clauses(c *Column_clausesContext)
+
+	// ExitAlter_column_default is called when exiting the alter_column_default production.
+	ExitAlter_column_default(c *Alter_column_defaultContext)
+
+	// ExitAlter_column_nullable is called when exiting the alter_column_nullable production.
+	ExitAlter_column_nullable(c *Alter_column_nullableContext)
+
+	// ExitAlter_column_type is called when exiting the alter_column_type production.
+	ExitAlter_column_type(c *Alter_column_typeContext)
+
+	// ExitAlter_table_rebuild is called when exiting the alter_table_rebuild production.
+	ExitAlter_table_rebuild(c *Alter_table_rebuildContext)
 
 	// ExitModify_collection_retrieval is called when exiting the modify_collection_retrieval production.
 	ExitModify_collection_retrieval(c *Modify_collection_retrievalContext)
@@ -6112,8 +6583,14 @@ type OscarParserListener interface {
 	// ExitReferences_clause is called when exiting the references_clause production.
 	ExitReferences_clause(c *References_clauseContext)
 
+	// ExitKey_actions is called when exiting the key_actions production.
+	ExitKey_actions(c *Key_actionsContext)
+
 	// ExitOn_delete_clause is called when exiting the on_delete_clause production.
 	ExitOn_delete_clause(c *On_delete_clauseContext)
+
+	// ExitOn_update_clause is called when exiting the on_update_clause production.
+	ExitOn_update_clause(c *On_update_clauseContext)
 
 	// ExitUnique_key_clause is called when exiting the unique_key_clause production.
 	ExitUnique_key_clause(c *Unique_key_clauseContext)
@@ -6316,6 +6793,9 @@ type OscarParserListener interface {
 	// ExitFetch_statement is called when exiting the fetch_statement production.
 	ExitFetch_statement(c *Fetch_statementContext)
 
+	// ExitMove_statement is called when exiting the move_statement production.
+	ExitMove_statement(c *Move_statementContext)
+
 	// ExitVariable_or_collection is called when exiting the variable_or_collection production.
 	ExitVariable_or_collection(c *Variable_or_collectionContext)
 
@@ -6327,6 +6807,12 @@ type OscarParserListener interface {
 
 	// ExitSet_transaction_command is called when exiting the set_transaction_command production.
 	ExitSet_transaction_command(c *Set_transaction_commandContext)
+
+	// ExitStart_transaction_command is called when exiting the start_transaction_command production.
+	ExitStart_transaction_command(c *Start_transaction_commandContext)
+
+	// ExitEnd_transaction_command is called when exiting the end_transaction_command production.
+	ExitEnd_transaction_command(c *End_transaction_commandContext)
 
 	// ExitSet_constraint_command is called when exiting the set_constraint_command production.
 	ExitSet_constraint_command(c *Set_constraint_commandContext)
@@ -6904,9 +7390,6 @@ type OscarParserListener interface {
 	// ExitXmlserialize_param_ident_part is called when exiting the xmlserialize_param_ident_part production.
 	ExitXmlserialize_param_ident_part(c *Xmlserialize_param_ident_partContext)
 
-	// ExitSql_plus_command_no_semicolon is called when exiting the sql_plus_command_no_semicolon production.
-	ExitSql_plus_command_no_semicolon(c *Sql_plus_command_no_semicolonContext)
-
 	// ExitSql_plus_command is called when exiting the sql_plus_command production.
 	ExitSql_plus_command(c *Sql_plus_commandContext)
 
@@ -7027,6 +7510,9 @@ type OscarParserListener interface {
 	// ExitCursor_name is called when exiting the cursor_name production.
 	ExitCursor_name(c *Cursor_nameContext)
 
+	// ExitPlan_name is called when exiting the plan_name production.
+	ExitPlan_name(c *Plan_nameContext)
+
 	// ExitRecord_name is called when exiting the record_name production.
 	ExitRecord_name(c *Record_nameContext)
 
@@ -7069,6 +7555,9 @@ type OscarParserListener interface {
 	// ExitGrant_object_name is called when exiting the grant_object_name production.
 	ExitGrant_object_name(c *Grant_object_nameContext)
 
+	// ExitGrant_object_type is called when exiting the grant_object_type production.
+	ExitGrant_object_type(c *Grant_object_typeContext)
+
 	// ExitColumn_list is called when exiting the column_list production.
 	ExitColumn_list(c *Column_listContext)
 
@@ -7101,6 +7590,9 @@ type OscarParserListener interface {
 
 	// ExitPrecision_part is called when exiting the precision_part production.
 	ExitPrecision_part(c *Precision_partContext)
+
+	// ExitOpt_array_bounds is called when exiting the opt_array_bounds production.
+	ExitOpt_array_bounds(c *Opt_array_boundsContext)
 
 	// ExitNative_datatype_element is called when exiting the native_datatype_element production.
 	ExitNative_datatype_element(c *Native_datatype_elementContext)
@@ -7164,4 +7656,328 @@ type OscarParserListener interface {
 
 	// ExitNumeric_function_name is called when exiting the numeric_function_name production.
 	ExitNumeric_function_name(c *Numeric_function_nameContext)
+
+	// ExitBulk_insert is called when exiting the bulk_insert production.
+	ExitBulk_insert(c *Bulk_insertContext)
+
+	// ExitHint is called when exiting the hint production.
+	ExitHint(c *HintContext)
+
+	// ExitCsv_option is called when exiting the csv_option production.
+	ExitCsv_option(c *Csv_optionContext)
+
+	// ExitClean_audit_configuration is called when exiting the clean_audit_configuration production.
+	ExitClean_audit_configuration(c *Clean_audit_configurationContext)
+
+	// ExitClean_rollback_segment is called when exiting the clean_rollback_segment production.
+	ExitClean_rollback_segment(c *Clean_rollback_segmentContext)
+
+	// ExitClose_cursor is called when exiting the close_cursor production.
+	ExitClose_cursor(c *Close_cursorContext)
+
+	// ExitDeallocate_cursor is called when exiting the deallocate_cursor production.
+	ExitDeallocate_cursor(c *Deallocate_cursorContext)
+
+	// ExitDeallocate_prepare is called when exiting the deallocate_prepare production.
+	ExitDeallocate_prepare(c *Deallocate_prepareContext)
+
+	// ExitExecute_statement is called when exiting the execute_statement production.
+	ExitExecute_statement(c *Execute_statementContext)
+
+	// ExitPrepare_stmt is called when exiting the prepare_stmt production.
+	ExitPrepare_stmt(c *Prepare_stmtContext)
+
+	// ExitComment_on_oscar is called when exiting the comment_on_oscar production.
+	ExitComment_on_oscar(c *Comment_on_oscarContext)
+
+	// ExitCdc_name is called when exiting the cdc_name production.
+	ExitCdc_name(c *Cdc_nameContext)
+
+	// ExitCreate_cdc is called when exiting the create_cdc production.
+	ExitCreate_cdc(c *Create_cdcContext)
+
+	// ExitDrop_cdc is called when exiting the drop_cdc production.
+	ExitDrop_cdc(c *Drop_cdcContext)
+
+	// ExitCek_name is called when exiting the cek_name production.
+	ExitCek_name(c *Cek_nameContext)
+
+	// ExitCmk_name is called when exiting the cmk_name production.
+	ExitCmk_name(c *Cmk_nameContext)
+
+	// ExitAlgorithm is called when exiting the algorithm production.
+	ExitAlgorithm(c *AlgorithmContext)
+
+	// ExitCek_enc_value is called when exiting the cek_enc_value production.
+	ExitCek_enc_value(c *Cek_enc_valueContext)
+
+	// ExitCreate_column_encryption_key is called when exiting the create_column_encryption_key production.
+	ExitCreate_column_encryption_key(c *Create_column_encryption_keyContext)
+
+	// ExitCek_clause is called when exiting the cek_clause production.
+	ExitCek_clause(c *Cek_clauseContext)
+
+	// ExitDrop_column_encryption_key is called when exiting the drop_column_encryption_key production.
+	ExitDrop_column_encryption_key(c *Drop_column_encryption_keyContext)
+
+	// ExitCreate_column_master_key is called when exiting the create_column_master_key production.
+	ExitCreate_column_master_key(c *Create_column_master_keyContext)
+
+	// ExitCmk_clause is called when exiting the cmk_clause production.
+	ExitCmk_clause(c *Cmk_clauseContext)
+
+	// ExitKey_store_name is called when exiting the key_store_name production.
+	ExitKey_store_name(c *Key_store_nameContext)
+
+	// ExitKey_path_str is called when exiting the key_path_str production.
+	ExitKey_path_str(c *Key_path_strContext)
+
+	// ExitDrop_column_master_key is called when exiting the drop_column_master_key production.
+	ExitDrop_column_master_key(c *Drop_column_master_keyContext)
+
+	// ExitRac_clause is called when exiting the rac_clause production.
+	ExitRac_clause(c *Rac_clauseContext)
+
+	// ExitVotediskpath is called when exiting the votediskpath production.
+	ExitVotediskpath(c *VotediskpathContext)
+
+	// ExitRac_node_info is called when exiting the rac_node_info production.
+	ExitRac_node_info(c *Rac_node_infoContext)
+
+	// ExitNodeip is called when exiting the nodeip production.
+	ExitNodeip(c *NodeipContext)
+
+	// ExitNodeid is called when exiting the nodeid production.
+	ExitNodeid(c *NodeidContext)
+
+	// ExitThreadid is called when exiting the threadid production.
+	ExitThreadid(c *ThreadidContext)
+
+	// ExitLocale_option is called when exiting the locale_option production.
+	ExitLocale_option(c *Locale_optionContext)
+
+	// ExitCtype is called when exiting the ctype production.
+	ExitCtype(c *CtypeContext)
+
+	// ExitCollate is called when exiting the collate production.
+	ExitCollate(c *CollateContext)
+
+	// ExitSys_user_clause is called when exiting the sys_user_clause production.
+	ExitSys_user_clause(c *Sys_user_clauseContext)
+
+	// ExitUsername is called when exiting the username production.
+	ExitUsername(c *UsernameContext)
+
+	// ExitPassword_auth is called when exiting the password_auth production.
+	ExitPassword_auth(c *Password_authContext)
+
+	// ExitDelete_alog_clause is called when exiting the delete_alog_clause production.
+	ExitDelete_alog_clause(c *Delete_alog_clauseContext)
+
+	// ExitCtrl_file_clause is called when exiting the ctrl_file_clause production.
+	ExitCtrl_file_clause(c *Ctrl_file_clauseContext)
+
+	// ExitAlter_rac_clause is called when exiting the alter_rac_clause production.
+	ExitAlter_rac_clause(c *Alter_rac_clauseContext)
+
+	// ExitCreate_domain is called when exiting the create_domain production.
+	ExitCreate_domain(c *Create_domainContext)
+
+	// ExitConstraint_spec is called when exiting the constraint_spec production.
+	ExitConstraint_spec(c *Constraint_specContext)
+
+	// ExitDrop_domain is called when exiting the drop_domain production.
+	ExitDrop_domain(c *Drop_domainContext)
+
+	// ExitCreate_external_table is called when exiting the create_external_table production.
+	ExitCreate_external_table(c *Create_external_tableContext)
+
+	// ExitAccess_parameters is called when exiting the access_parameters production.
+	ExitAccess_parameters(c *Access_parametersContext)
+
+	// ExitCreate_fulltext_index is called when exiting the create_fulltext_index production.
+	ExitCreate_fulltext_index(c *Create_fulltext_indexContext)
+
+	// ExitAlter_fulltext_index is called when exiting the alter_fulltext_index production.
+	ExitAlter_fulltext_index(c *Alter_fulltext_indexContext)
+
+	// ExitDrop_fulltext_index is called when exiting the drop_fulltext_index production.
+	ExitDrop_fulltext_index(c *Drop_fulltext_indexContext)
+
+	// ExitOptimize_fulltext_index is called when exiting the optimize_fulltext_index production.
+	ExitOptimize_fulltext_index(c *Optimize_fulltext_indexContext)
+
+	// ExitMergeindexname is called when exiting the mergeindexname production.
+	ExitMergeindexname(c *MergeindexnameContext)
+
+	// ExitCreate_resource_label is called when exiting the create_resource_label production.
+	ExitCreate_resource_label(c *Create_resource_labelContext)
+
+	// ExitAlter_resource_label is called when exiting the alter_resource_label production.
+	ExitAlter_resource_label(c *Alter_resource_labelContext)
+
+	// ExitDrop_resource_label is called when exiting the drop_resource_label production.
+	ExitDrop_resource_label(c *Drop_resource_labelContext)
+
+	// ExitCreate_masking_policy is called when exiting the create_masking_policy production.
+	ExitCreate_masking_policy(c *Create_masking_policyContext)
+
+	// ExitMasking_clause is called when exiting the masking_clause production.
+	ExitMasking_clause(c *Masking_clauseContext)
+
+	// ExitMasking_function is called when exiting the masking_function production.
+	ExitMasking_function(c *Masking_functionContext)
+
+	// ExitPolicy_filter is called when exiting the policy_filter production.
+	ExitPolicy_filter(c *Policy_filterContext)
+
+	// ExitPolicy_filter_on is called when exiting the policy_filter_on production.
+	ExitPolicy_filter_on(c *Policy_filter_onContext)
+
+	// ExitAlter_masking_policy is called when exiting the alter_masking_policy production.
+	ExitAlter_masking_policy(c *Alter_masking_policyContext)
+
+	// ExitDrop_masking_policy is called when exiting the drop_masking_policy production.
+	ExitDrop_masking_policy(c *Drop_masking_policyContext)
+
+	// ExitPolicy_add_comments is called when exiting the policy_add_comments production.
+	ExitPolicy_add_comments(c *Policy_add_commentsContext)
+
+	// ExitPolicy_modify_masking is called when exiting the policy_modify_masking production.
+	ExitPolicy_modify_masking(c *Policy_modify_maskingContext)
+
+	// ExitPolicy_modify_filter is called when exiting the policy_modify_filter production.
+	ExitPolicy_modify_filter(c *Policy_modify_filterContext)
+
+	// ExitPolicy_drop_filter is called when exiting the policy_drop_filter production.
+	ExitPolicy_drop_filter(c *Policy_drop_filterContext)
+
+	// ExitStaistics_name is called when exiting the staistics_name production.
+	ExitStaistics_name(c *Staistics_nameContext)
+
+	// ExitCreate_multiple_statistics is called when exiting the create_multiple_statistics production.
+	ExitCreate_multiple_statistics(c *Create_multiple_statisticsContext)
+
+	// ExitAlter_multiple_statistics is called when exiting the alter_multiple_statistics production.
+	ExitAlter_multiple_statistics(c *Alter_multiple_statisticsContext)
+
+	// ExitUpdate_multiple_statistics is called when exiting the update_multiple_statistics production.
+	ExitUpdate_multiple_statistics(c *Update_multiple_statisticsContext)
+
+	// ExitDrop_multiple_statistics is called when exiting the drop_multiple_statistics production.
+	ExitDrop_multiple_statistics(c *Drop_multiple_statisticsContext)
+
+	// ExitSchemaname is called when exiting the schemaname production.
+	ExitSchemaname(c *SchemanameContext)
+
+	// ExitCreate_schema is called when exiting the create_schema production.
+	ExitCreate_schema(c *Create_schemaContext)
+
+	// ExitAlter_schema is called when exiting the alter_schema production.
+	ExitAlter_schema(c *Alter_schemaContext)
+
+	// ExitDrop_schema is called when exiting the drop_schema production.
+	ExitDrop_schema(c *Drop_schemaContext)
+
+	// ExitCreate_statistics is called when exiting the create_statistics production.
+	ExitCreate_statistics(c *Create_statisticsContext)
+
+	// ExitAlter_statistics is called when exiting the alter_statistics production.
+	ExitAlter_statistics(c *Alter_statisticsContext)
+
+	// ExitUpdate_statistics is called when exiting the update_statistics production.
+	ExitUpdate_statistics(c *Update_statisticsContext)
+
+	// ExitDrop_statistics is called when exiting the drop_statistics production.
+	ExitDrop_statistics(c *Drop_statisticsContext)
+
+	// ExitAlter_system is called when exiting the alter_system production.
+	ExitAlter_system(c *Alter_systemContext)
+
+	// ExitUndo_clause is called when exiting the undo_clause production.
+	ExitUndo_clause(c *Undo_clauseContext)
+
+	// ExitWallet_clause is called when exiting the wallet_clause production.
+	ExitWallet_clause(c *Wallet_clauseContext)
+
+	// ExitCreate_wallet_clause is called when exiting the create_wallet_clause production.
+	ExitCreate_wallet_clause(c *Create_wallet_clauseContext)
+
+	// ExitOpen_wallet_clause is called when exiting the open_wallet_clause production.
+	ExitOpen_wallet_clause(c *Open_wallet_clauseContext)
+
+	// ExitClose_wallet_clause is called when exiting the close_wallet_clause production.
+	ExitClose_wallet_clause(c *Close_wallet_clauseContext)
+
+	// ExitModify_wallet_clause is called when exiting the modify_wallet_clause production.
+	ExitModify_wallet_clause(c *Modify_wallet_clauseContext)
+
+	// ExitBackup_wallet_clause is called when exiting the backup_wallet_clause production.
+	ExitBackup_wallet_clause(c *Backup_wallet_clauseContext)
+
+	// ExitAlter_wallet_password_clause is called when exiting the alter_wallet_password_clause production.
+	ExitAlter_wallet_password_clause(c *Alter_wallet_password_clauseContext)
+
+	// ExitDrop_savepoint is called when exiting the drop_savepoint production.
+	ExitDrop_savepoint(c *Drop_savepointContext)
+
+	// ExitCursor_stmt is called when exiting the cursor_stmt production.
+	ExitCursor_stmt(c *Cursor_stmtContext)
+
+	// ExitGet_description_of is called when exiting the get_description_of production.
+	ExitGet_description_of(c *Get_description_ofContext)
+
+	// ExitGet_paraminfo_for is called when exiting the get_paraminfo_for production.
+	ExitGet_paraminfo_for(c *Get_paraminfo_forContext)
+
+	// ExitGet_rowdescription_for is called when exiting the get_rowdescription_for production.
+	ExitGet_rowdescription_for(c *Get_rowdescription_forContext)
+
+	// ExitKill_stmt is called when exiting the kill_stmt production.
+	ExitKill_stmt(c *Kill_stmtContext)
+
+	// ExitRefresh_materialized_view is called when exiting the refresh_materialized_view production.
+	ExitRefresh_materialized_view(c *Refresh_materialized_viewContext)
+
+	// ExitStart_audit is called when exiting the start_audit production.
+	ExitStart_audit(c *Start_auditContext)
+
+	// ExitShutdown_stmt is called when exiting the shutdown_stmt production.
+	ExitShutdown_stmt(c *Shutdown_stmtContext)
+
+	// ExitSet_autocommit is called when exiting the set_autocommit production.
+	ExitSet_autocommit(c *Set_autocommitContext)
+
+	// ExitReset_stmt is called when exiting the reset_stmt production.
+	ExitReset_stmt(c *Reset_stmtContext)
+
+	// ExitShow_stmt is called when exiting the show_stmt production.
+	ExitShow_stmt(c *Show_stmtContext)
+
+	// ExitReplace_statement is called when exiting the replace_statement production.
+	ExitReplace_statement(c *Replace_statementContext)
+
+	// ExitLimitClause is called when exiting the limitClause production.
+	ExitLimitClause(c *LimitClauseContext)
+
+	// ExitLimitOptions is called when exiting the limitOptions production.
+	ExitLimitOptions(c *LimitOptionsContext)
+
+	// ExitLimitOption is called when exiting the limitOption production.
+	ExitLimitOption(c *LimitOptionContext)
+
+	// ExitTop_clause is called when exiting the top_clause production.
+	ExitTop_clause(c *Top_clauseContext)
+
+	// ExitTypename is called when exiting the typename production.
+	ExitTypename(c *TypenameContext)
+
+	// ExitModify_table_default_attrs is called when exiting the modify_table_default_attrs production.
+	ExitModify_table_default_attrs(c *Modify_table_default_attrsContext)
+
+	// ExitSet_subpartition_template is called when exiting the set_subpartition_template production.
+	ExitSet_subpartition_template(c *Set_subpartition_templateContext)
+
+	// ExitPartition_attributes is called when exiting the partition_attributes production.
+	ExitPartition_attributes(c *Partition_attributesContext)
 }
