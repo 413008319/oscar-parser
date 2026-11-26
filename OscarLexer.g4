@@ -2639,7 +2639,7 @@ START_CMD: // https://docs.oracle.com/cd/B19306_01/server.102/b14357/ch12002.htm
     '@' '@'?
 ; // https://docs.oracle.com/cd/B19306_01/server.102/b14357/ch12003.htm
 
-REGULAR_ID: SIMPLE_LETTER (SIMPLE_LETTER | '$' | '_' | '#' | [0-9])*;
+REGULAR_ID: (SIMPLE_LETTER | '_')  (SIMPLE_LETTER | '$' | '_' | '#' | [0-9])*;
 
 INQUIRY_DIRECTIVE: '$$' (SIMPLE_LETTER | '_')+;
 
